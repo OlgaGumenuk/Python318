@@ -10,5 +10,7 @@ d['emp3']['salary'] = 8500
 
 for i in d:
     print(i)
-    for j in d[i]:
-        print("\t", j, ":", d[i][j])
+    # for j in d[i]:
+    #     print("\t", j, ":", d[i][j])
+    for j, v in d[i].items():
+        print("\t", j, ":", v)

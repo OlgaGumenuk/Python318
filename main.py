@@ -2,7 +2,7 @@
 # print("Hello," + _name2_ + "!")
 # first_name = "Olga"
 # print("Hello," + first_name + "!")#комментарии
-
+# import math
 # a =  30
 # b = "Hello"
 # c = 2.5
@@ -664,10 +664,10 @@
 
 # summ = 0
 # a = [int(input("->")) for i in range(int(input("n = ")))]
-# for i in range(len(a)):
-#     if a[i] < 0:
-#         summ += a[i]
-#второи способ
+# # for i in range(len(a)):
+# #     if a[i] < 0:
+# #         summ += a[i]
+# #второи способ
 # for i in a:
 #     if i < 0:
 #         summ += i
@@ -774,10 +774,10 @@
 #
 # print(s)
 # #s.append(8)  # добавили элемент в конец списка
-# # s.append([8, 2])
-#
-# s.extend([20, 1, 2])
-# s.extend("add") # добавили  набор элементов в конец списка
+# s.append([8, 2])
+# #
+# # s.extend([20, 1, 2])
+# # s.extend("add") # добавили  набор элементов в конец списка
 # print(s)
 # # добавляет элемент по заданному индексу второи параметр это значение а первыи это номер индекса элемента
 # s.insert(3, 59)
@@ -849,12 +849,12 @@
 # print(c)  # [1, 11, 2, 22, 3, 33, 44, 55]
 
 
-# a = [7, 9, 2, 9, 1, 17, 9]
+# a = [5, 6, 7, 8, 9, 10, 11, 12, 13]
 # print(a)
-# # a.remove(9)  # удаляет первое совпадение по значению
-# # print(a)
-# # last = a.pop()  # удаляет последнии эл-т списка и возвращает его же
-# # print(last)
+# a.remove(9)  # удаляет первое совпадение по значению
+# print(a)
+# last = a.pop()  # удаляет последнии эл-т списка и возвращает его же
+# print(last)
 # second = a.pop(0) # удаляет элемент по индексу
 # print(second)
 # print(a)
@@ -863,10 +863,10 @@
 
 # num = a.count(9)  # считает кол-во заданных значении в списке
 # print(num)
-# ind = a.index(19)  # возвращает индекс элемента по заданному значению
+# ind = a.index(8)  # возвращает индекс элемента по заданному значению
 # print(ind)
 # ind2 = a.index(9, 2, -1)  # ищет со 2-го индекса и до конца цифру 9
-# print(ind)
+# print(ind2)
 
 # num = 7
 # if num in a:
@@ -882,14 +882,11 @@
 # b = a.copy()
 # print("a=", a)
 # print("b=", b)
-# a.append(4)
+# # a.append(4)
 # b.append(120)
 # print("a=", a)
 # print("b=", b)
 # метод еще посмотреь сорт
-
-
-
 
 # пропустила занятие за 03 фквраля
 
@@ -912,19 +909,20 @@
 
 # sort - посмотреть
 # a = [7, 9, 2, 9, 1, 17, 9]
-# print(a)
+# # print(a)
 # a.sort()  # сортировка элементов по возрастанию
-# a.sort(reverse=True)  # сортировка элементов по убыванию
+# # a.sort(reverse=True)  # сортировка элементов по убыванию
 # print(a)
-
+#
 # s = ["Виталии", "Алескандр", "Алексеи", "Анна"]
 # # print(s)
 # # s.sort()
 # # print(s)
-# # s.sort(key=len)  #сортировка по длине элемнтов списка отменьшего к больш.
-# # print(s)
+# s.sort(key=len)  #сортировка по длине элемнтов списка отменьшего к больш.
+# print(s)
 # s.sort(key=len)
-# # s.sort(key=len, reverse=True)  #сортировка по алгоритму заданнои функции
+# s.sort(key=len, reverse=True)  #сортировка по алгоритму заданнои функции
+# print(s)
 # print(len(s))
 # print(len(s[0]))
 
@@ -968,14 +966,12 @@
 # print(res)
 # print(sum(s))
 
-# s = [random.randint(0, 100) for i in range(10)]
-# print(s)
-# m = max(s)
-# print(m)
-# s.remove(m)
-# print(s)
-# s.insert(0, m)
-# print(s)
+# svitok = [random.randint(123, 184) for i in range(7)]
+# print(svitok)
+# big = max(svitok)
+# print(big)
+# svitok.insert(0, big)
+# print(svitok)
 
 # x = list('1a2b3c4d')
 # print(x)
@@ -994,7 +990,6 @@
 # print(bool(lst))
 
 
-
 # n1 = int(input("Введите размер первого списка: "))
 # n2 = int(input("Введите размер второго списка: "))
 # a = [random.randint(0, 10) for i in range(n1)]
@@ -1007,9 +1002,9 @@
 # for i in range(len(a)):
 #     if a[i] not in c:
 #         c.append(a[i])
-# for i in range(len(b)):
-#     if b[i] not in c:
-#         c.append(b[i])
+# # for i in range(len(b)):
+# #     if b[i] not in c:
+# #         c.append(b[i])
 # print(c)
 # c = []
 # for i in range(len(a)):
@@ -1030,23 +1025,23 @@
 
 
 # m = [
-#     [1, 2, 3, 4],
+#     [1, 2, 3, 4, 55],
 #     [5, 6, 7, 8],
-#     [9, 10, 11, 12]
+#     [9, 10, 11, 12, 44, 88]
 # ]
 # print(m, end="\n\n")
 # # print(len(m))
 # print(m[1][2])
 
-
 # s = ["Hello", "World"]
 # print(s[1][0])
 
 # for row in range(len(m)):  # 0 1 2
-#     # print(m[row])
+#     print(m[row])
 #     for col in range(len(m[row])):
-#         print(m[row][col], end="\t")
+#         print(m[row][col], end="\t\t")
 #     print()
+# print()
   #второи вариант записи без индексов
 # for row in m:
 #     # print(row)
@@ -1063,30 +1058,47 @@
 
 
 # w, h = 5, 3
-# # matrix = [[random.radint(1,20) for x in range(w)] for y in range(h)]
-# # matrix = [[0for x in range(w)] for y in range(h)]
+# # matrix = [[random.randint(1,20) for x in range(w)] for y in range(h)]
+# matrix = [[0 for x in range(w)] for y in range(h)]
+
+# matrix = []  # [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+# for y in range(h):  # 3
+#     new_row = []
+#     for x in range(w):  # 5
+#         new_row.append(0)  # new_row = [0,0,0]
+#     matrix.append(new_row)
 #
 #
 # for row in matrix:
 #     for x in row:
-#         print(x ** 2, end="\t\t")
+#         print(x, end="\t\t")
 #     print()
 
+# распакoвка последовательностеи
+# for x, y, z in [[1, 2, 1], [3, 4, 2], [5, 6, 3], [7, 8, 4]]:
+#     print(z, ") ", x, "+", y, " = ", x + y, sep="")
 
-
-
-
-
-
-
-
-
-
+# for x in [[1, 2, 1], [3, 4, 2], [5, 6, 3], [7, 8, 4]]:
+#     print(x[2], ") ", x[0], " + ", x[1], " = ", x[0] + x[1], sep="")
 
 #занятие 4 февраля
+#задача вывести символов горизонально или вертикально
+# n = int(input("Кол-во символов: "))
+# sim = input("Тип символа: ")
+# orient = int(input("0 - горизонтальная,\n1 - вертикальная,\nopиентация линии:"))
+# i = 0
+# while i < n:
+#     if orient == 0:
+#         print(sim, end=" ")
+#     if orient == 1:
+#         print(sim)
+#     i += 1
+# else:
+#     print("Такого не предусмотрено")
+
 
 # import math
-#
+
 # num1 = math.sqrt(4)
 # num2 = math.pi
 # num3 = math.ceil(3.2)
@@ -1097,10 +1109,9 @@
 # print(num4)
 
 # import math as m
-#
+
 # num3 = m.ceil(3.2)
 # num4 = m.floor(3.7)
-#
 # print(num3)
 # print(num4)
 
@@ -1112,7 +1123,7 @@
 # print(num3)
 # print(num4)
 
-# from math import ceil, floor as f
+# from math import ceil as c, floor as f
 #
 # num3 = ceil(3.2)
 # num4 = f(3.7)
@@ -1144,9 +1155,9 @@
 #
 # print(time.strftime("Сегодня: %B %d, %Y"))
 
-
+# import time
 # start = time.monotonic()
-# pause = 5
+# pause = 2.3
 # print("Программа запущена...")
 # time.sleep(pause)
 # print("Пауза была", pause, "секунд")
@@ -1205,11 +1216,24 @@
 #     b=int(input("Ввудите b:"))
 # ))
 
+# def change(lst):
+#     #
+#     lst.insert(0, lst[-1])
+#     lst.pop(-1)
+#     lst.append(lst[1])
+#     lst.pop(1)
+#     print(lst)
+#
+#
+# change([1, 2, 3])
+# change([9, 12, 33, 54, 105])
+# change(['с', 'л', 'о', 'н'])
+
 # def cub(a):
 #     return a * a * a
 #
 #
-# for i in range(1, 11):
+# for i in range(21, 31):
 #     print(i, "в кубе =", cub(i))
 
 
@@ -1845,14 +1869,14 @@
 # print(d)
 
 # d = {'a': 1, 'b': 2, 'c': 3}
-# d2 = [('r', 7), ('q', 9)]
-# # d2 = {'r': 7, 'q': 9}
-# # print(list(d2.items()))
-# # d.update(d2)
-# # d3 = d.copy()
-# # d3.update(d2)
-# d |= d2
-# print(d)
+# # d2 = [('r', 7), ('q', 9)]
+# d2 = {'r': 7, 'q': 9}
+# print(list(d2.items()))
+# # # d.update(d2)
+# d3 = d.copy()
+# d3.update(d2)
+# # d |= d2
+# print(d3)
 
 
 # d = {'name': 'Kelly', 'age': '25', 'salary': 8000, 'city': 'New York'}
@@ -1916,16 +1940,17 @@
 # print(sales[person])
 
 
+# 24 february
 
 # zip готовая функция
 
 # a = ['Dec', 'Jan', 'Feb']
 # b = [12, 1, 2]
-# c = (2.9, 3.7, 9.2)
-# # d = dict(zip(b, a))
-# d = list(zip(b))
-# # d = dict(zip(b, a))
-# d = set(zip(b, a))
+# # c = (2.9, 3.7, 9.2)
+# # # d = dict(zip(b, a))
+# # d = list(zip(b))
+# d = dict(zip(b, a))
+# # d = set(zip(b, a))
 # # d = tuple(zip(b, a, c))
 # print(d)
 
@@ -1936,7 +1961,7 @@
 #     print(k1, '->', v1)
 #     print(k2, '->', v2)
 
-
+#распаков последов.
 # lt = [('Dec', 12), ('Jan', 1), ('Feb', 2)]
 # a, b = zip(*lt)
 # print(a)
@@ -1951,18 +1976,18 @@
 #паспаковка словаря как может рабоатать
 # first = {'one': 1, 'two': 2}
 # second = {'three': 3, 'flour': 4,'one': 11}
-# print({**first, **second})  # {'one': 1, 'two': 2, 'three': 3, 'flour': 4}
+# print({**first, **second})  # общии словарь {'one': 1, 'two': 2, 'three': 3, 'flour': 4}
 # for k, v in {**first, **second}.items():
 #     print(k, "=>", v)
 
 
 # colors = ['red', 'green', 'blue']
-# i = 1
-# for color in colors:
-#     print(i, ")", color, sep="")
-#     i += 1
+# # i = 1
+# # for color in colors:
+# #     print(i, ")", color, sep="")
+# #     i += 1
 # for num, val in enumerate(colors, 1):  # start=1
-#     print(num, ")", color, sep="")
+#     print(num, ")", val, sep="")
 
 # задача
 
@@ -2011,22 +2036,112 @@
 # print(summa(1, 2, 3, 4, 5, 6, 7))
 
 
-# def ch(*agrs):
-#     avd = sum(args) / len(args)
+# def ch(*args):
+#     avg = sum(args) / len(args)
 #     print(avg)
 #     res = []
 #     for num in args:
 #         if num < avg:
 #             res.append(num)
-#                 return res
+#     return res
 #
 #
-# print(1, 2, 3, 4, 5, 6, 7, 8, 9)
-# print(5, 6, 7, 8, 9)
+# print(ch(1, 2, 3, 4, 5, 6, 7, 8, 9))
+# print(ch(5, 6, 7, 8, 9))
 # s = 1, 2, 3, 4, 5, 6, 7, 8, 9
+# print(s)
 # print(type(s))
 
 
+# def func(a, *args):
+#     return a, args
+#
+#
+# print(func(5))
+# print(func(1, 2, 3, "abc"))
+
+
+# def print_scores(student, *scores):
+#     print("Student name: ", student, end=", Oценки: ")
+#     for score in scores:
+#         print(score, end=" ")
+#     print()
+#
+#
+# print_scores("Jonathan", 100, 65, 85, 96, 87)
+# print_scores("Rick", 96, 20, 33, 66)
+
+
+
+# def func(**kwargs):
+#     return kwargs
+#
+#
+# print(func(a=1, b=2, c=3))
+# print(func())
+# print(func(one="один"))
+#получим словари
+
+
+
+# def intro(**data):
+#     for k, v in data.items():
+#         print(k, "is", v)
+#     print()
+#
+#
+# intro(name="Irina", surname="Sharma", age=22)
+# intro(name="Igor", surname="Wood", email="rei.mail.ru", country="Russia", age=22,phone=79598456541)
+
+
+# def func(a, b, *args, y=0, x=0, **kwargs):
+#     return a, b, args, kwargs, y, x
+#
+#
+# print(func(5, 1, 2, 3, 4, 5, 6, 7, n=9, m=10, x=5, y=100))
+
+#задача
+# my_dict = {'one': 'first'}
+
+
+# def ddictio(**kwargs):
+#     my_dict.update(kwargs)
+#
+# print("my_dict = ", my_dict)
+# ddictio(k1=22, k2=31, k3=11, k4=91)
+# print("my_dict = ", my_dict)
+# ddictio(name='Bob', age=31, weight=61, eyes_color='grey')
+# print("my_dict = ", my_dict)
+
+# name = "Tom"  # глобльная переменная
+# surname = ""
+#
+# def hi():
+#     global name, surname
+#     name = "Sam"
+#     surname = "Johnson"  # локальная переменная
+#     print("Hello", name, surname)
+#
+#
+# def bye():
+#     print("Good bye", name)
+#
+#
+# print(name)
+# hi()
+# bye()
+# print(name)
+
+
+# sum = 5
+#
+# lst = [9, 8, 5, 6,]
+# print(sum(lst))
+
+# print = "Hello"
+#
+#
+# print("Python")
 
 
 
@@ -2044,17 +2159,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+# 03 march2024
 # def add(a):
 #     x = 2
 #
@@ -2366,4 +2471,4 @@
 
 # print("Вносим изменения")
 
-print("Данные переносим на GitHub")
+# print("Данные переносим на GitHub")
