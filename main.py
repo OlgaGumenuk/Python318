@@ -300,7 +300,7 @@
 # else:
 #     print("Ошибка ввода данных")
 
-#как свич в явескпирт только оператор мэтч
+# как свич в явескпирт только оператор мэтч
 
 # password = "werty"
 
@@ -322,7 +322,7 @@
 #     case _:
 #         print("Такого дня не существует или нерабочее время")
 
-#тернарные операторы
+# тернарные операторы
 # a, b = 40, 20
 # minim = a if a < b else b
 # print(minim)
@@ -674,7 +674,6 @@
 # print(summ)
 
 
-
 # s = list(range(10, 100, 10))
 # print(s)
 #
@@ -692,7 +691,7 @@
 #         count += 1
 #     else:
 #         s += n[i]
-#второи вариант
+# второи вариант
 # for i in n:
 #     if i % 2 == 0:
 #         count += 1
@@ -713,7 +712,7 @@
 # for i in range(1, len(a)):
 #     if a[i] > a[i - 1]:
 #         print(a[i], end=" ")
-#второи вариант
+# второи вариант
 # for i in a:
 #     if i > i - 1:
 #         print(i, end=" ")
@@ -732,7 +731,7 @@
 # a[0], a[1] = a[1], a[0]
 # print(a)
 
-#Срез = список у которого можем передать от[start:stop:step]
+# Срез = список у которого можем передать от[start:stop:step]
 # s = [5, 9, 3, 7, 1, 8]
 # print(s)
 # print(s[1:3])  # не включая последнии индекс
@@ -1042,7 +1041,7 @@
 #         print(m[row][col], end="\t\t")
 #     print()
 # print()
-  #второи вариант записи без индексов
+# второи вариант записи без индексов
 # for row in m:
 #     # print(row)
 #     for x in row:
@@ -1081,8 +1080,8 @@
 # for x in [[1, 2, 1], [3, 4, 2], [5, 6, 3], [7, 8, 4]]:
 #     print(x[2], ") ", x[0], " + ", x[1], " = ", x[0] + x[1], sep="")
 
-#занятие 4 февраля
-#задача вывести символов горизонально или вертикально
+# занятие 4 февраля
+# задача вывести символов горизонально или вертикально
 # n = int(input("Кол-во символов: "))
 # sim = input("Тип символа: ")
 # orient = int(input("0 - горизонтальная,\n1 - вертикальная,\nopиентация линии:"))
@@ -1303,9 +1302,7 @@
 # print(count)
 
 
-
-
-#10 02 24
+# 10 02 24
 
 # def get_sum(a, b, c=0, d=1):
 #     return a + b + c + d
@@ -1382,8 +1379,8 @@
 # lt1[1] = 50
 # print(lt1, id(lt1), id(lt1[0]), id(lt1[1]))
 
-  # Неизменяемые типы данных - int,str,float,bool, tuple
-  # Uзменяемые типы данных - list
+# Неизменяемые типы данных - int,str,float,bool, tuple
+# Uзменяемые типы данных - list
 
 # Кортеж(Tuple) - неизменяемы список
 #
@@ -1406,7 +1403,6 @@
 
 # a = 5,
 # print(a, type(a))
-
 
 
 # from random import randint
@@ -1504,7 +1500,6 @@
 # print(name)
 
 
-
 # name = "Ifor"
 
 
@@ -1537,8 +1532,7 @@
 #         print("Город: ", city_name, ", население = ", city_population, sep="")
 
 
-
-#МНОЖЕСТВА (set) - неупорядоченная коллекция,изменяемы тип данных,которая хранит только уникальные значения
+# МНОЖЕСТВА (set) - неупорядоченная коллекция,изменяемы тип данных,которая хранит только уникальные значения
 
 # s = {"red","green","blue"}
 # print(type(s))
@@ -1560,7 +1554,6 @@
 # # s = {input("-> ") for x in range(3)}
 # s = {randint(20, 50) for x in range(10)}
 # print(s)
-
 
 
 # s = {"red", "green", "blue"}
@@ -1672,7 +1665,6 @@
 # print(a != b)
 
 
-
 # a = [9, 8, 9, 6, 5, 2, 5, 8, 3, 7, 8, 4, 7]
 # print(a)
 # s = set(a)
@@ -1725,21 +1717,21 @@
 # print(d2, type(d2))
 
 # 18 февраля
-#ключи не должны повторяться
-#ключом могут быть неизменяемые типы данных
+# ключи не должны повторяться
+# ключом могут быть неизменяемые типы данных
 # списки множества и словарь не могут быть ключами
 # но могут быть значениями
 # d = {0: "text", "one": 45, (1, 2.3): "Кортеж", "Список" : [2,3,5], True : 1, False : 0, 1 : "Один"}
 # print(d)
 
 
-#удаление значения  по ключу
+# удаление значения  по ключу
 # key = 45
 # # if key in d:
 # #     del d[key]
 # print(d)
 
-#удаление значения второи вариант
+# удаление значения второи вариант
 # try:
 #     del d[key]
 # except KeyError:
@@ -1761,7 +1753,7 @@
 # print(d[True])
 # print(d[1])
 
-#задача
+# задача
 
 # sl = {'x1' : 3, 'x2 : 7', 'x3' : 5, 'x4' : -1}
 # a = 1
@@ -1771,7 +1763,7 @@
 #     #print(sl[key])
 # print(a)
 
-#задача
+# задача
 
 # d = dict()  # {}
 # d[1] = input("->")
@@ -1785,7 +1777,7 @@
 # del d[dislike]
 # print(d)
 
-#задача
+# задача
 
 # goods = {
 #     '1': ['Core-i3-4330', 9, 4500],
@@ -1904,7 +1896,7 @@
 # new_d = {key: value for key, value in d.items() if value <= 2}
 # print(new_d)
 
-#задача
+# задача
 # sales = {
 #     'John': {"N": 3056, "S": 8463, "E": 8441, "W": 2694},
 #     'Tom': {"N": 4832, "S": 6786, "E": 4737, "W": 3612},
@@ -1918,7 +1910,7 @@
 #     for y in sales[x]:
 #         print(y, ":", sales[x][y])
 
-#решение
+# решение
 # sales = {
 #     'John': {"N": 3056, "S": 8463, "E": 8441, "W": 2694},
 #     'Tom': {"N": 4832, "S": 6786, "E": 4737, "W": 3612},
@@ -1961,7 +1953,7 @@
 #     print(k1, '->', v1)
 #     print(k2, '->', v2)
 
-#распаков последов.
+# распаков последов.
 # lt = [('Dec', 12), ('Jan', 1), ('Feb', 2)]
 # a, b = zip(*lt)
 # print(a)
@@ -1973,7 +1965,7 @@
 # print(len(b))
 
 
-#паспаковка словаря как может рабоатать
+# паспаковка словаря как может рабоатать
 # first = {'one': 1, 'two': 2}
 # second = {'three': 3, 'flour': 4,'one': 11}
 # print({**first, **second})  # общии словарь {'one': 1, 'two': 2, 'three': 3, 'flour': 4}
@@ -2072,7 +2064,6 @@
 # print_scores("Rick", 96, 20, 33, 66)
 
 
-
 # def func(**kwargs):
 #     return kwargs
 #
@@ -2080,8 +2071,7 @@
 # print(func(a=1, b=2, c=3))
 # print(func())
 # print(func(one="один"))
-#получим словари
-
+# получим словари
 
 
 # def intro(**data):
@@ -2100,7 +2090,7 @@
 #
 # print(func(5, 1, 2, 3, 4, 5, 6, 7, n=9, m=10, x=5, y=100))
 
-#задача
+# задача
 # my_dict = {'one': 'first'}
 
 
@@ -2144,22 +2134,26 @@
 # print("Python")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 03 march2024
+
+# s = 0
+#
+#
+# def outer(a, b, c):
+#     def inner(i, j):
+#         return i * j
+#     global s
+#     s = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
+#     return s
+#
+# outer(2, 4, 6)
+# print(s)
+# outer(5, 8, 2)
+# print(s)
+# outer(1, 6, 8)
+# print(s)
+
+
 # def add(a):
 #     x = 2
 #
@@ -2172,7 +2166,6 @@
 #
 #
 # print(add(5))
-
 
 
 # x = 25
@@ -2197,7 +2190,6 @@
 # print(c)
 
 
-
 # x = 5
 #
 # def fn1():
@@ -2218,7 +2210,6 @@
 #
 # fn1()  # 1
 # print(x)
-
 
 
 # def outer(a1, b1, a2, b2):
@@ -2261,7 +2252,6 @@
 # print(x)
 
 
-
 # def func1():
 #     a = 1
 #     b = 'line'
@@ -2282,7 +2272,7 @@
 # print(func())
 
 
-#задача
+# задача
 
 # def func(city):
 #     count = 0
@@ -2336,7 +2326,6 @@
 #     print(t("abc_"))
 
 
-
 # def inc1(n):
 #     def inner(x):
 #         return n + x
@@ -2346,8 +2335,6 @@
 #
 # func = inc1(10)
 # print(func(5))
-
-
 
 
 # def inc2(n):
@@ -2448,7 +2435,6 @@
 # print(s)
 
 
-
 # def outer(a, b, c):
 # s = 0
 #
@@ -2472,3 +2458,370 @@
 # print("Вносим изменения")
 
 # print("Данные переносим на GitHub")
+
+
+# map(func, iterable), filter(func, iterable)
+
+# def mult(t):
+#     return t * 2
+#
+#
+# lst = [2, 8, 12, -5, -10]
+#
+# lst2 = list(map(lambda t: t * 2, lst))
+#
+# print(lst2)
+# print(list(map(lambda t: t * 2, [2, 8, 12, -5, -10])))
+
+# t = (2.88, -1.75, 100.55)
+#
+# # t2 = tuple(map(lambda x: int(x), t))
+# t2 = tuple(map(int, t))
+# print(t2)
+
+# st = ['a', 'b', 'c', 'd', 'e']
+# num = [1, 2, 3, 4, 5, 6, 7]
+#
+# res = list(map(lambda x, y: (x, y), num, st))
+# print(res)
+
+# l1 = [1, 2, 3]
+# l2 = [4, 5, 6]
+# res = list(map(lambda x, y: x + y, l1, l2))
+# print(res)
+
+# def func(s):
+#     return len(s) == 3
+
+
+# t = ('adcf', 'jdhsncb', 'nhg', 'lsk', '')
+#
+# # t2 = tuple(filter(lambda s: len(s) == 3, t))
+# # t2 = tuple(filter(func, t))
+# t2 = tuple(filter(lambda s: s * 3, t))
+# print(t2)
+
+
+# b = [60, 90, 100, 75, 55, 45, 78, 68, 81]
+# res = list(filter(lambda s: s > 75, b))
+# print(res)
+
+# from random import randint
+
+# lst = [randint(1, 40) for i in range(10)]
+# print(lst)
+#
+# lst2 = list(filter(lambda t: 10 <= t <= 20, lst))
+# print(lst2)
+
+
+# m = list(map(lambda x: x ** 2, filter(lambda x: x % 2, range(10))))
+# print(m)
+#
+# m1 = [x ** 2 for x in range(10) if x % 2]
+# print(m1)
+
+
+# Декораторы
+
+# def hello():
+#     return "Hello, I am func 'hello'"
+#
+#
+# def super_func(func):
+#     print("Hello, I am func 'super_func'")
+#     print(func())
+#
+#
+# super_func(hello)
+
+# def hello():
+#     return "Hello, I am func 'hello'"
+#
+#
+# test = hello
+# print(test())
+
+# def my_decorator(func):
+#     def inner():
+#         print("Code before")
+#         func()
+#         print("Code after")
+#
+#     return inner
+#
+#
+# def func_test():
+#     print("Hello, I am func 'func_test'")
+#
+#
+# test = my_decorator(func_test)
+# test()
+
+
+# def my_decorator(func):  # декарирующая функция
+#     def inner():
+#         print("*" * 40)
+#         func()
+#         print("=" * 40)
+#
+#     return inner
+#
+# @my_decorator  # декоратор
+# def func_test():  # декорируемая функция
+#     print("Hello, I am func 'func_test'")
+#
+#
+# func_test()
+#
+# # вуаДОПИСАТЬТЬЬЬЬЬЬЬЬЬЬЬЬ
+#
+#
+# print("Hello, I am func 'func_test'")
+
+
+# def bold(fn):
+#     def wrap():
+#         return "<b>" + fn() + "</b>"
+#
+#     return wrap
+#
+#
+# def italic(fn):
+#     def wrap():
+#         return "<i>" + fn() + "</i>"
+#
+#     return wrap
+#
+#
+# @bold
+# @italic
+# def hello():
+#     return "text"
+#
+#
+# print(hello())
+
+# задача
+# def cnt(fn):
+#     count = 0
+#     def wrap():
+#         nonlocal count
+#         count += 1
+#         fn()
+#         print("Вызов функции", count)
+#
+#     return wrap
+#
+#
+# @cnt
+# def hello():
+#     print("Hello")
+#
+#
+# hello()
+# hello()
+# hello()
+
+
+# def args_decorator(fn):
+#     def wrap(arg1, arg2):
+#         print("Данные: ", arg1, arg2)
+#         fn(arg1, arg2)
+#
+#     return wrap
+#
+# @args_decorator
+# def print_full_name(name, surname):
+#     print("Меня зовут", name, surname)
+#
+#
+# print_full_name("Ирина", "Ветрова")
+
+
+# def args_decorator(fn):
+#     def wrap(*args, **kwargs):
+#         print("args:",args)
+#         print("kwargs:", kwargs)
+#         fn(*args, **kwargs)
+#
+#     return wrap
+#
+# @args_decorator
+# def print_full_name(a, b, c, study="Python"):
+#     print(a, b, c, "изучают", study, "\n")
+#
+#
+# print_full_name("Ирина", "Борис", "Светлана", study="JavaScript")
+# print_full_name("Владимир", "Екатерина", "Виктор")
+
+# def decor(args1, args2):
+#     def args_dec(fn):
+#         def wrap(x, y):
+#             print(args1, x, args2, y, "=", end=" ")
+#             fn(x, y)
+#
+#         return wrap
+#     return args_dec
+#
+#
+# @decor("Сумма ", "+")
+# def summa(a, b):
+#     print(a + b)
+#
+#
+# @decor("Разность ", "-")
+# def sub(a, b):
+#     print(a - b)
+#
+#
+# summa(5, 2)
+# sub(5, 2)
+
+# задача
+# def multiply(arg):
+#     def decor(fn):
+#         def wrap(*args, **kwargs):
+#             return arg * fn(*args, **kwargs)
+#
+#         return wrap
+#     return decor
+#
+# @multiply(3)
+# def return_num(num):
+#     return num
+#
+#
+# print(return_num(5))
+
+
+# домаш1603
+
+
+# def avg(fn):
+#     def wrap(*args):
+#         return fn(*args) / len(args)
+#
+#     return wrap
+#
+#
+# @avg
+# def summa(*args):
+#     return sum(args)
+#
+#
+# print(summa(2, 3, 3, 4))
+
+
+# занятие 17 03 2024 строки - неизменемыи тип данных
+
+# print(0b10)
+# print(bin(18))  # 0b10010 => 0b => префикс двоичная система
+# print(oct(18))  # 0o22 => 0o - восьмиричная система
+# print(hex(18))  # 0x12 => 0x - шестнадцатеричная система
+#
+# print(0b10010 + 0o22)
+# print(0o22 + 0x12)
+# print(0x12 + 18)
+
+
+# v = 'Pyt'
+# w = 'hon'
+# e = v + w
+# print(e)  # Python +>
+# print(e * 3)
+# print("y" in e)
+# print("l" in e)
+# print(e[1])
+# print(e[-1])
+# print(e[1:4])
+# print(e[1:4])
+# print(e[:])
+# print(e[::-1])
+# e = e[:3] + 't' + e[4:]
+
+# print(u"Привет")
+# print("C:\\folder\\file.txt")
+# print(r"C:\folder\file.txt")
+# print(r"C:\folder\\"[:-1])
+# print(r"C:\folder" + "\\")
+# print("C:\\folder\\")
+
+# name = "Дмитр"
+# age = 25
+# print("Ьеня зовут " + name + " . Мне" + str(age) + " лет.")
+# a = f"Меня зовут {name}. Мне {age} лет."
+# print(a)
+# print(f"Число {round(12.23654, 2)}, {5 + 3}")
+# print(f"Число: {12.23654:.3f}")
+
+# x = 5
+# y = 10
+# print(f"{x = }, {y = }")
+# print(f"{x} x {y} / 2 = {x * y / 2}")
+
+# dir_name = "folder"
+# file_name = "file.txt"
+# print(fr"home\{dir_name}\{file_name}")
+# print("home" + "\\" + dir_name + "\\" + file_name)
+
+# s = """Строка
+# символов"""
+# print(s)
+# s1 = '''Строка
+# имволов'''
+# print(s1)
+# s2 = ("Строка символов")
+# print(s2)
+
+# def suare(n):
+#         """Принимает число n, возвращает число n"""
+#     print("hello")
+#     return n ** 2
+#
+#
+# print(suare(5))
+
+# from math import pi
+#
+#
+# def cylinder(r, h):
+#     """
+#     Вычисляет площадь цилиндра.
+#
+#     Вычисляет площадь цилиндра на основании заданнои высоты и радиуса основания.
+#
+#     :param r: положительное число, радиус основания цилиндра
+#     :param h: положительное число, высота цилиндра
+#     :return: положительное число, площадь цилиндра
+#     """
+#     return 2 * pi * (r + h)
+#
+#
+# print(cylinder(5, 8))
+# print(cylinder.__doc__)
+# print(sum.__doc__)
+# print(len.__doc__)
+# print(int.__doc__)
+# print(type.__doc__)
+
+# print(ord('a'))
+# print(ord('ш'))
+
+
+# while True:
+#     n = input("->")
+#     if n != "-1":
+#         print(ord(n))
+#         break
+
+# st = "Test string for me "
+# arr = [ord(x) for x in st]
+# print("ASCII коды: ", arr)
+# arr = [int(sum(arr) / len(arr))] + arr
+# print("Среднее арифетическое", arr)
+# arr += [ord(x) for x in input("->")[:3] if ord(x) not in arr]
+# print(arr)
+# print(arr.count(arr[-1]) - 1)
+# arr.sort(reverse=True)
+# print(arr)
