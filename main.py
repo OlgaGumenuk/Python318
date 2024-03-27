@@ -2675,8 +2675,16 @@
 #     print(a - b)
 #
 #
-# summa(5, 2)
-# sub(5, 2)
+# @decor("Произведние ", "*")
+# def mul(a, b):
+#     print(a * b)
+#
+#
+# n = 5
+# m = 5
+# summa(n, m)
+# sub(n, m)
+# mul(n, m)
 
 # задача
 # def multiply(arg):
@@ -2762,7 +2770,7 @@
 
 # dir_name = "folder"
 # file_name = "file.txt"
-# print(fr"home\{dir_name}\{file_name}")
+# # print(fr"home\{dir_name}\{file_name}")
 # print("home" + "\\" + dir_name + "\\" + file_name)
 
 # s = """Строка
@@ -2810,12 +2818,13 @@
 
 
 # while True:
-#     n = input("->")
+#     n = input("-> ")
 #     if n != "-1":
 #         print(ord(n))
+#     else:
 #         break
 
-# st = "Test string for me "
+# st = "Test string for me"
 # arr = [ord(x) for x in st]
 # print("ASCII коды: ", arr)
 # arr = [int(sum(arr) / len(arr))] + arr
@@ -2825,3 +2834,217 @@
 # print(arr.count(arr[-1]) - 1)
 # arr.sort(reverse=True)
 # print(arr)
+
+#Домашнее за 17.03.2024
+
+arr = str("Я изучаю Nuthon. Мне нравится Nuthon. Nuthon очень хорошии язык программирования.")
+n = str("N")
+p = str("P")
+print(arr)
+
+arr2 = []
+for x in range(len(arr)):
+    if arr[x] != n:
+        arr2.append(arr[x])
+
+    else:
+        arr2.append(p)
+# print(arr2)
+
+print(''.join(str(el) for el in arr2))
+
+
+
+
+
+
+
+
+
+# 24 марта 2024 занятие
+
+
+
+#  пропустила первые 15 минут
+
+
+
+
+
+# s = "hello, world! I am learn.PY."
+# print(s)
+#
+# print(s.endswith("on."))  #  заканч-ся ли строка на заданную подстроку ->(true , false)
+# print(s.startswith("I am", 14))  #  заканч-ся ли строка на заданную подстроку ->(true , false)
+# print(s.find("I am"))
+
+
+# a = input("Введите число: ")
+# try:
+#     a = int(a)
+#     print(a ** 2)
+# except ValueError:
+#     print("Нужно ввести число")
+
+# print('123'.isdigit())  # состоит ли строка только из чисел
+# print('12a3'.isdigit())
+#
+# a = input("Введите число: ")
+# b = 2
+# if a.isdigit():
+#     a = int(a)
+#     print(a + b)
+# else:
+#     print(a + str(b))
+
+#
+# print("abc123!".isalnum())  # состоит ли строка из букв и цифр НО БЕЗ СПЕЦСИМВОЛОВ
+# print("abcASD".isalpha())  # состоит ли только из букв
+
+# print("abc".islower())  # состоит ли из нижнего регистра
+# print("ВАП!;%".isupper())  # состоит ли из верхнего регистра
+
+# print('py'.center(10))  # метод смещает
+# print('py'.center(10, "-"))  # метод смещает  с символом заполнителем ----py----
+# print('py'.center(2))  #
+
+# print("   py    ".lstrip())
+# print("   py    ".rstrip())
+# print("   py    ".strip())
+
+# print("https://www.pyhon.org".lstrip("/:pths"))
+# print("https://www.pyhon.org".strip("/:pthsw"))
+# print("https://www.pyhon.orgw".lstrip("/:pths").rstrip("w"))
+
+# s = "hello, Python! I am learning Python. Python"
+# print(s.replace("Python", "Java"))  # replace метод поиск и замена того что нашли
+
+# преобразовыватель метод
+
+# s = ""
+# seg = ("a", "b", "c")
+# print(s.join(seg))
+#
+# print("..".join(['1', '2']))  # объединяет итерируемыи объект в строку через символ разделитель
+#
+# print(":".join("Hello"))
+
+# print("a b c".split())  # метод разбивает на элементы в виде списка
+# print("www.python.org".split("."))  # метод разбивает подругому по символу
+# print("www.python.org".split(".", 1))  #  с объединнением всего чтоосталось после этого
+# print("www.python.org".rsplit(".", 1))  #  с объединнением всего чтоосталось после этого
+
+# Регулярные выражения
+# если какието совпадения то меняем
+
+# import re
+
+# s = "Я ищу совпадения в 2024 году. И я их наиду в 2 счёта."
+# reg = r"\."
+# print(re.findall(reg, s))  # возвращает список, содержащии все совпадения с шаблона
+# print(re.search(reg, s))  # возвращает первое  совпадение с шаблона
+# print(re.search(reg, s).span())
+# print(re.search(reg, s).start())
+# print(re.search(reg, s).end())
+# print(re.search(reg, s).group())
+#последние 4 метода будут выбрасывать исключения
+# print(re.match(reg, s))  # поиск по шаблону в начале строки
+# print(re.split(reg, s, 3))  # возвращает список в котором строка разбита по шаблону
+# print(re.sub(reg, "!", s))  # поиск и замена
+# print(re.sub(reg, "!", s, 1))  # поиск и замена
+
+# s = r"Я ищу совпадени_я в 2024 году. \"И я их наиду\" в 2 счёта. [1398765]. Hel-lo"
+# # reg = r"[204]"
+# # reg = r"[2-4]"
+# reg = r"[12][09][0-9][0-9]"  # 200[00]  19[00]  # 1103-1040
+# print(re.findall(reg, s))
+# print(ord("А"))  # 1040
+# print(ord("Я"))  # 1071
+# print(ord("а"))  # 1072
+# print(ord("я"))  # 1103
+# print(ord("ё"))  # 1105
+# print(ord("Ё"))  # 1025
+# print(chr(96))
+
+# st = "Час в 24-часовом формате от 00 до 23. 2021-06-15T21:65. Минуты, в диапазоне от 00 до 59. 2021-06-15T01:09."
+# pattern = "[0-2][0-9]:[0-5][0-9]"
+# print(re.findall(pattern, st))
+
+
+# часто применяется
+# s = "Я ищу совпадения в 2024 году. И я их наиду в 2 счёта.Hel-lo 20000000"
+# reg = r"\d"  # [0-9]
+# reg = r"\D"  # [^0-9]
+# reg = r"\s"  # [ ]
+# reg = r"\S"  # [ ] поиск чего угодно кроме пробелов
+# reg = r"\w"  # [0-9A-zА-я_]
+# reg = r"\W"  # [^0-9A-zА-я_]
+# reg = r"\АИя"
+# reg = r"\году.Z"
+# reg = r"\Bния"
+# reg = r"\w+"
+# reg = r"\d+"
+# reg = r"20*"
+# print(re.findall(reg, s))
+
+# Количество повторении текущих элементов      квантификаторы
+# + - от 1 до бесконечности
+# * - от 0 до бесконечно
+# ? - от 0 до одного повторения
+
+
+# d = "Цифры: 7, +17, --42, 0013, 0.3456"
+# print(re.findall(r"[+-]?\d+[.\d]*", d))
+
+# st = "05-06-1987 # Дата рождения"
+
+# print("Дата рождения:", re.sub(r"\s#.*", "", st))
+# # Дата рождения: 05-06-1987 => Дата рождения: 05.06.1987
+# print("Дата рождения:", re.sub(r"-", ".", re.sub(r"\s#.*", "", st)))
+
+
+# st = "autor=Пушкин А.С.; title = Евгении Онегин; price = 200; year= 1831"
+# # pattern = r"\w+\s*=\s*[\w\s.]+"
+# pattern = r"\w+\s*=\s*[^;,]+"
+# print(re.findall(pattern, st))
+
+# s1 = "12 сентября 2024 года 4565412"
+# reg1 = r"\d{1,4}"
+# print(re.findall(reg1, s1))
+
+# s = r"Я ищу совпадения в 2024 году. И я их наиду в 2 счё_та."
+# # reg = r"^\w+\s\w+"
+# reg = r"\w+\s\w+\.$"
+# print(re.findall(reg, s))
+
+# def valid_login(name):
+#     return re.findall("[A-Za-z0-9_-]{3,16}", name)
+#
+#
+# print(valid_login("Python_master"))
+# print(valid_login("Python"))
+#
+# print(re.findall(r"\w+", "12 + и"))
+# print(re.findall(r"\w+", "12 + и", flags=re.ASCII))
+#
+# text = "Hello World"
+# print(re.findall(r"\w+", text, re.DEBUG))
+
+# s = r"Я ищу совпадения в 2024 году. И я их наиду в 2 счё_та."
+# reg = "я"
+# print(re.findalд(reg, s, re.IGNORECASE)
+
+#
+
+# print(re.findall(r"one.\w+", text))
+# print(re.findall(r"one.\w+", text, re.DOTALL))
+# print(re.findall(r"one$", text, re.MULTILINE))
+
+# print(re.findall("""
+# [a-z.-]+  # part 1
+# @         # @
+# [a-z.-]+  # part 2
+# """, "test@mail.ru", re.VERBOSE))
+
+
+
