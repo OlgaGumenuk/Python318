@@ -2854,6 +2854,66 @@
 # print(''.join(str(el) for el in arr2))
 
 
+# 23/04/2024 занятие
+
+# print(chr(97))
+# print(chr(35))
+# print(chr(3864))
+
+# a = 122
+# b = 97
+# if a > b:
+#     for i in range(b, a + 1):
+#         print(chr(i), end=" ")
+# else:
+#     for i in range(b, a + 1):
+#         print(chr(i), end=" ")
+
+#второи вариант
+# a = 97
+# b = 122
+# if b > a:
+#     a, b = b, a
+#
+# for i in range(b, a + 1):
+#     print(chr(i), end=" ")
+
+# print("apple" == "Apple")
+# print("apple" > "Apple")  # 97 > 65
+
+# from random import randint
+#
+# min_ascii = 33
+# max_ascii = 126
+# shortest = 6
+# longest = 16
+#
+# def random_password():
+#     res = ""
+#     for i in range(randint(shortest, longest)):  # range(0, 6)
+#         res += chr(randint(min_ascii, max_ascii))
+#     return res
+#
+#
+# print("Ваш случаиныи пароль: ", random_password())
+
+# Методы строк
+
+s = "hello, WORLD! I am learning Python."
+print(s)
+# a = s.capitalize()
+# print(a)
+# print(s.lower())
+# print(s.upper())
+# print(s.count('l'))
+# print(s.lower().count('l'))
+
+print(s.count('l'))
+
+
+
+
+
 
 
 
