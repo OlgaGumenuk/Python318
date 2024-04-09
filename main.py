@@ -2835,7 +2835,7 @@
 # arr.sort(reverse=True)
 # print(arr)
 
-#Домашнее за 17.03.2024
+# Домашнее за 17.03.2024
 
 # arr = str("Я изучаю Nuthon. Мне нравится Nuthon. Nuthon очень хорошии язык программирования.")
 # n = str("N")
@@ -2869,7 +2869,7 @@
 #     for i in range(b, a + 1):
 #         print(chr(i), end=" ")
 
-#второи вариант
+# второи вариант
 # a = 97
 # b = 122
 # if b > a:
@@ -2899,43 +2899,35 @@
 
 # Методы строк
 
-s = "hello, WORLD! I am learning Python."
-print(s)
-# a = s.capitalize()
-# print(a)
-# print(s.lower())
-# print(s.upper())
-# print(s.count('l'))
-# print(s.lower().count('l'))
+# s = "hello, WORLD! I am learning Python."
+# print(s)
+# # a = s.capitalize()
+# # print(a)
+# # print(s.lower())
+# # print(s.upper())
+# # print(s.count('l'))
+# # print(s.lower().count('l'))
+#
+# print(s.count('h', 1, -4))
+# print(s.count('h'))
+#
+# print(s.find("Python"))  # поиск подстроки в строке, возвращает индекс совпадения, если совпадения нет то вернет строго
+# # зарезервированное значение -1
+# print(s.index("Python"))  # поиск подстроки в строке, возвращает индекс совпадения, если совпадения нет
+# # вернет исключение ValueError
 
-print(s.count('l'))
-
-
-
-
-
-
-
-
-
-
-
+# st = input("Введите два слова через пробел: ")  # один два
+# first = st[:st.find(" ")]
+# second = st[st.find(" ") + 1:]
+# print(second + " " + first)
 
 # 24 марта 2024 занятие
-
-
-
-#  пропустила первые 15 минут
-
-
-
-
 
 # s = "hello, world! I am learn.PY."
 # print(s)
 #
 # print(s.endswith("on."))  #  заканч-ся ли строка на заданную подстроку ->(true , false)
-# print(s.startswith("I am", 14))  #  заканч-ся ли строка на заданную подстроку ->(true , false)
+# print(s.startswith("I am", 14))  #  -ся ли строка на заданную подстроку ->(true , false)
 # print(s.find("I am"))
 
 
@@ -2997,7 +2989,7 @@ print(s.count('l'))
 # Регулярные выражения
 # если какието совпадения то меняем
 
-# import re
+import re
 
 # s = "Я ищу совпадения в 2024 году. И я их наиду в 2 счёта."
 # reg = r"\."
@@ -3007,7 +2999,7 @@ print(s.count('l'))
 # print(re.search(reg, s).start())
 # print(re.search(reg, s).end())
 # print(re.search(reg, s).group())
-#последние 4 метода будут выбрасывать исключения
+# последние 4 метода будут выбрасывать исключения
 # print(re.match(reg, s))  # поиск по шаблону в начале строки
 # print(re.split(reg, s, 3))  # возвращает список в котором строка разбита по шаблону
 # print(re.sub(reg, "!", s))  # поиск и замена
@@ -3044,6 +3036,8 @@ print(s.count('l'))
 # reg = r"\Bния"
 # reg = r"\w+"
 # reg = r"\d+"
+# reg = r"\d+"
+# reg = r"\d*"
 # reg = r"20*"
 # print(re.findall(reg, s))
 
@@ -3107,4 +3101,675 @@ print(s.count('l'))
 # """, "test@mail.ru", re.VERBOSE))
 
 
+#H W 24.03.2024
 
+# def new_login(name):
+#     return re.findall("[\w-]+@[\w+\w.+]+", name, re.ASCII)
+#
+#
+# print(new_login("m3y-p@sswOrd"))
+
+def new_login(name):
+    return re.findall("[A-Za-z0-9_-]+@[A-Za-z0-9_-]{6,18}", name)
+
+
+print(new_login("m3y-p@sswOrd"))
+
+
+
+
+# 30 марта 2024
+
+# import re
+
+# text = """Python,
+# python,
+# PYTHON"""
+# reg = "(?im)^python"
+# print(re.findall(reg, text))
+
+# text = "<body>Пример жадного соот-вия регул выражении</body>"
+# print(re.findall("<.*>", text))  # [<body>, </body>]
+# не отработало так как нужно# берет соответствия по максимуму то есть жадное
+# print(re.findall("<.*?>", text))   # ленивое
+
+# *? , +?, ??
+# {m,n}?, {,n}?, {m,}?
+
+
+# s1 = "12 сентября 2024 года 4567897"
+# reg1 = r"\d{2,4}?"
+# reg1 = r"\d{2}?"
+# print(re.findall(reg1, s1))
+
+# s = "Петр и Виталий отлично учатся!"
+# reg = r"Ольга|Виталий"
+# print(re.findall(reg, s))
+
+
+# s = "int = 4, float = 4.0f, double = 8.0, float"
+# # reg = r"int\s*=\s*[.\w+]*|float\s*=\s*[.\w+]*"
+# # reg = r"(?:int|float)\s*=\s*[.\w+]*"
+# reg = r"((?:int|float)\s*=\s*(?:[.\w+]*))"
+# print(re.findall(reg, s))
+# print(re.search(reg, s))
+
+# (?:...) - обозначает, что эта группирующая скобка является не сохраняющеи
+
+# s = "5 + 7*2 - 4"
+# reg = r"\s*([+*-])\s*"
+# print(re.split(reg, s))
+
+# задача
+# a = "31-10-1921"
+# pattern = r"(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19\d\d|[20-9][0-9])"
+# print(re.findall(pattern, a))
+# print(re.search(pattern, a).group(1))
+# m = re.search(pattern, a)
+# print(m[0])
+# print(m[1])
+# print(m[2])
+
+
+# s = "Самолет прилетает 10/23/2024. Будем рады вас видеть после 10/24/2024."  # 23.10.2024
+# reg = r"(\d{2})/(\d{2})/(\d{4})"
+# print(re.sub(reg, r"\2.\1.\3", s))
+
+# s = "yandex.com and yandex.com.ru"
+# reg = r"(([a-z0-9-]{2,}\.)+[a-z]{2,4})"
+# print(re.sub(reg, r"http://\1", s))
+
+
+# Рекурсия (когда фция вызывает сама себя)
+
+# def elevator(n):  # 4
+#     if n == 0:
+#         print("Вы в подвале")
+#         return
+#     print("=>", n)
+#     elevator(n - 1)  # стек: 5 4 3 2 1
+#     print(n, end=" ")
+#
+#
+# n1 = int(input("На каком вы этаже: "))  # 5
+# elevator(n1)
+
+
+# def sum_list(lst):
+#     res = 0
+#     for i in lst:
+#         res += i
+#     return res
+
+# подругому еще смотреть внимательно
+
+# def sum_list(lst):  # [7, 9]
+#     if len(lst) == 1:
+#         print(lst, "=> lst[0]:", lst[0])
+#         return lst[0]  # 9
+#     else:
+#         print(lst, "=> lst[0]:", lst[0])
+#         return lst[0] + sum_list(lst[1:])  # 1 + 3
+#
+#
+# print(sum_list([1, 3, 5, 7, 9]))  # 25
+#  ЕЩЕ ДОПИСЫВАТЬ
+
+# def to_str(n, base):  # n = 354  // 10
+#     convert = "0123456789ABCDEF"
+#     if n < base:
+#         return convert[n]  # convert[3] => '3'
+#     else:
+#         return to_str(n // base, base) + convert[n % base]  # convert[354 % 10]это [4] => '4'
+#
+#
+# print(to_str(354, 10))
+
+
+# def count_items(item_list):  #
+#     count = 0  # 1 #3
+#     for item in item_list:
+#         if isinstance(item, list):
+#             count += count_items(item)
+#         else:
+#             count += 1
+#     return count
+#
+#
+# names = ['Adam', ['Bob', ['Chat', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill'], "Ann"]
+
+
+# print(names)
+# print(len(names))
+# print(isinstance(names, list))
+# print(isinstance(names[0], list))
+# print(isinstance(names[1][1][0], list))
+# print(count_items(names))
+
+# def remove(text):  # " Hello\nWorld "
+#     if not text:  # text = ""
+#         return ""
+#     if text[0] == "\n" or text[0] == " ":
+#         return remove(text[1:])
+#     else:
+#         return text[0] + remove(text[1:])
+#
+#
+# print(remove(" Hello\nWorld "))
+
+# ЗАНЯТИЕ ЗА 24 МАРТА ПРОДОЛЖИТЬ КОНСПЕКТ САМОИ
+
+# ЗАНЯТИЕ ЗА 30 МАРТА ЕСТЬ КОНСПЕКТ НО РАЗОБРАТЬСЯ НАДО СМОИ!!!!!!!!!!!!!!!!!!!!
+
+
+# занятие за 31,03,24
+
+
+# f = open("test.txt", "r")
+# f = open("D:/Olyunka/318_2/test.txt", "r")
+# print(f)
+# print(*f)
+#
+# print(f.mode)
+# print(f.name)
+# print(f.encoding)
+# f.close()
+# print(f.closed)
+
+# f = open("test.txt", "r")
+# print(f.read(3))
+# print(f.read())  # дочистает следующие символы после 3
+# f.close()
+#
+# f = open("test.txt", "r")
+# print(f.read())
+# f.close()
+
+# f = open("test1.txt", "r")
+# print(f.readline())
+# print(f.readline(8))
+# print(f.readline())
+# print(f.readline())
+# f.close()
+
+# f = open("test1.txt", "r")
+# # print(f.readlines(16))  #
+# print("count = ", len(f.readlines()))
+# f.close()
+
+# f = open("test1.txt", "r")
+# for line in f:
+#     print(line)
+# f.close()
+
+
+# f = open("test1.txt", "r")
+# count = 0
+# for line in f:
+#     print(line)
+#     count += 1
+# f.close()
+# print("count = ", count)
+
+# f = open("xyz.txt", "w")
+# f.write("Hello\nWorld!!!!")
+# f.close()
+
+# f = open("xyz1.txt", "a")
+# f.write("\nNew text")
+# f.close()
+
+# line = ['This is line 1\n', 'This is line 2\n']
+# f = open("xyz.txt", "w")
+# f.writelines(line)
+# f.close()
+
+
+# lst = [i for i in range(1, 20)]
+# print(lst)
+#
+# f = open("xyz.txt", "w")
+# for index in lst:
+#     f.write(index)
+# f.close()
+
+
+# 06 апреля 2024
+
+# file = "text2.txt"
+#
+# f = open(file, "w")
+# f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
+# f.close()
+#
+# f = open(file, 'r')
+# read_line = f.readlines()
+# f.close()
+#
+# print(read_line)
+# pos1 = int(input("pos1 = "))
+# pos2 = int(input("pos2 = "))
+# if 0 <= pos1 < len(read_line) and 0 <= pos2 < len(read_line):  # a, b = b, a
+#     read_line[pos1], read_line[pos2] = read_line[pos2], read_line[pos1]
+# else:
+#     print("Такой строки нет")
+# print(read_line)
+#
+# f = open(file, "w")
+# f.writelines(read_line)
+# f.close()
+
+# file = "text2.txt"
+#
+# f = open(file)
+# line = 0
+#
+# for i in f:
+#     line += 1
+#     # print(i)
+#     word = 0
+#     flag = 0
+#     for j in i:
+#         if j != " " and flag ==0:
+#             word += 1
+#             flag = 1
+#         elif j == " ":
+#             flag = 0
+#     print(i, len(i), "символов", word, "слов")
+# print(line, "строк в документе")
+# f.close()
+
+
+# Модуль OS и OS.PATH
+
+
+# import os
+
+
+# import os.path
+
+
+# print(os.getcwd())  # путь к рабочеи директории
+# print(os.listdir())  # список директории  и фаилов
+# print(os.listdir(".."))
+
+# os.mkdir("folder1")  # создать папку
+# os.makedirs("nested1/nested2/nested3")  # создаст папку с промежуточными папками в пути
+# os.remove("folder1/1.txt")  # удалить фаил
+# os.rmdir("folder1")  # удалить папку, но только пустую
+
+# os.rename("xyz1.txt", "test3.txt")
+# os.rename("folder", "test")  # переименовывает фаилы или папки
+
+# os.rename("xyz.txt", "test/xy.txt")
+# os.rename("two.txt", "text/t.txt")  # переименовывает фаилы или папки и перемещает их по несуществующему пути
+# путем их создания
+
+# for root, dirs, files in os.walk("nested1", topdown=False):
+#     print("Root:", root)
+#     print("\tSubdirs:", dirs)
+#     print("\tFiles:", files)
+
+# удаление пустых директории из ветки задача
+
+# def remove_empy_dirs(root_tree):
+#     print(f"Удаление пустых директории в ветви {root_tree}")
+#     print("-" * 50)
+#     for root, dirs, files in os.walk(root_tree):
+#         if not os.listdir(root):
+#             os.rmdir(root)
+#             print(f"Директория {root} удалена")
+#     print("-" * 50)
+#
+#
+# remove_empy_dirs("nested1")
+
+# print(os.path.split(r"D:\Olyunka\318_2\nested1\nested2\nested3\text.txt"))
+# print(os.path.join(r"D:\Python", "318", "nested2", "text.txt"))
+
+# dirs = [r'Work\F1', r'Work\F2\F21']
+# for d in dirs:
+#     os.makedirs(d)
+
+# files = {
+#     'Work': ['w.txt'],
+#     r'Work\F1':  ['f11.txt', 'f12.txt', 'f13.txt'],
+#     r'Work\F2\F21': ['f211.txt', 'f212.txt']
+# }
+# for d, f in files.items():
+#     for file in f:
+#         file_path = os.path.join(d, file)
+#         open(file_path, "w").close()
+#
+# files_with_text = [r'Work\w.txt', r'Work\F1\f12.txt', r'Work\F2\F21\f211.txt', r'Work\F2\F21\f212.txt']
+#
+# for file in files_with_text:
+#     with open(file, 'w') as f:
+#         f.write(f"Любые слова для фаила {file}")
+#
+# def print_tree(root, topdown):
+#     print(f"Обход {root} {'сверху вниз' if topdown else 'снизу вверх'}")
+#     for root, dirs, files1 in os.walk(root, topdown):
+#         print(root)
+#         print(dirs)
+#         print(files1)
+#     print("-" * 50)
+#
+#
+# print_tree("Work", False)
+# print_tree("Work", True)
+# Work\w.txt
+# Work\F1\f11.txt
+# Work\F1\f12.txt
+# Work\F1\f13.txt
+# Work\F2\F21\f211.txt
+# Work\F2\F21\f212.txt
+
+
+# print(os.path.exists(r"D:\Olyunka\318_2\nested1\nested2\nested3\text.txt"))
+# возвращает True  если путь существует в фаиловои системе
+
+# import time
+#
+# path = "main.py"
+# print(os.path.getsize(path) / 1024)  # размер фаила 80килобаит
+#
+# print(os.path.getctime(path))  # время создания фаила  для виндоус
+# print(os.path.getatime(path))  # время последнего доступа к фаилу
+# print(os.path.getmtime(path))  #  время последнего изменения фаила ( в секундах)
+#
+# print(time.strftime("%d.%m.%Y, %H:%M:%S", time.localtime(os.path.getctime(path))))
+# print(time.strftime("%d.%m.%Y, %H:%M:%S", time.localtime(os.path.getmtime(path))))
+
+# print(os.path.isdir(r"D:\Olyunka\318_2\nested1\nested2\nested3"))
+# print(os.path.isfile(r"D:\Olyunka\318_2\nested1\nested2\nested3\text.txt"))
+
+
+# D Z 06.04.24
+
+
+# import os
+#
+# dir_name = "nested1"
+#
+# objs = os.listdir(dir_name)
+# print(objs)
+#
+# for obj in objs:
+#     p = os.path.join(dir_name, obj)
+#     # print(p)
+#     if os.path.isfile(p):
+#         print(f"{obj} - file - {os.path.getsize(p)} bytes")
+#     elif os.path.isdir(p):
+#         print(f"{obj} - dir")
+
+# 07.04.2024
+
+
+# class Point:
+#     """Класс для представления координат точек на плоскости"""
+#     x = 1
+#     y = 1
+#
+#
+# p1 = Point()
+# p1.x = 5
+# p1.y = 10
+# p1.z = 30
+# print(p1.x)
+# print(p1.y)
+# print(p1.__dict__)
+#
+#
+# p2 = Point()
+# print(p2.x)
+# print(p2.y)
+# print(p2.__dict__)
+#
+# print(Point.__dict__)
+# print(Point.__doc__)
+
+
+# print(id(Point))
+# print(id(p1))
+# print(id(p2))
+
+
+# class Point:
+#     x = 1
+#     y = 1
+#
+#     def set_coord(self, x, y):
+#         self.x = x
+#         self.y = y
+#         print(self.__dict__)
+#
+#
+# p1 = Point()
+# # p1.x = 5
+# # p1.y = 10
+# p1.set_coord(5, 10)
+# Point.set_coord(p1, 2, 4)
+#
+# p2 = Point()
+# # p2.x = 3
+# # p2.y = 7
+# p2.set_coord(3, 7)
+
+
+# class Human:
+#     name = "name"
+#     birthday = "00.00.0000"
+#     phone = "00-00-00"
+#     country = "country"
+#     city = "city"
+#     address = "street, house"
+#
+#     def print_info(self):
+#         print(" Персональные данные ".center(40, "*"))
+#         print(f"Имя: {self.name}\nДата рождения: {self.birthday}\nНомер телефона: {self.phone}\n"
+#               f"Страна: {self.country}\nГород: {self.city}\nДомашний адрес: {self.address}")
+#         print("=" * 40)
+#
+#     def input_info(self, first_name, birthday, phone, country, city, address):
+#         self.birthday = birthday
+#         self.phone = phone
+#         self.address = address
+#         self.country = country
+#         self.city = city
+#         self.name = first_name
+#
+#     def set_name(self, name):  # устанавливаем новое имя
+#         self.name = name
+#
+#     def get_name(self):  # получаем имя
+#         return self.name
+#
+#     def set_birthday(self, value):
+#         self.birthday = value
+#
+#     def get_birthday(self):
+#         return self.birthday
+#
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info("Юля", "23.05.1986", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1А")
+# h1.print_info()
+# h1.set_name("Юлия")
+# print(h1.get_name())
+# h1.set_birthday("25.05.1986")
+# print(h1.get_birthday())
+
+
+# class Person:
+#     skill = 10  # статическое своиство
+#
+#     def __init__(self, name, surname):  # Инициализатор -проц присвоения первоначальнах своиств
+#         self.name = name  # динамические своиства или просто своиства класса
+#         self.surname = surname
+#         print("Инициализатор Person")
+#
+#     def __del__(self):
+#         print("Удаление экземпляра класса")
+#
+#     def print_info(self):
+#         print("Данные струдника: ")
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print("Квалификация сотрудника: ", self.skill, end="\n\n")
+#
+#
+# p1 = Person("Виктор", "Резник")
+# p1.print_info()
+# p1.add_skill(3)
+#
+# # del p1
+# p1 = 5
+#
+# p2 = Person("Анна", "Долгих")
+# p2.print_info()
+# p2.add_skill(2)
+
+
+
+# class Point:
+#     count = 0  # 3
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#         Point.count += 1
+#
+#     def get_coord(self):
+#         print(self.__dict__)
+#
+#
+#
+# p1 = Point(5,10)
+# p1.get_coord()
+#
+# p2 = Point(3, 7)
+# p2.get_coord()
+#
+# p3 = Point(8, 16)
+# p3.get_coord()
+# print(p1.count)
+# print(p2.count)
+# print(p3.count)
+#
+# print(Point.count)
+
+
+# class Robot:
+#     k = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         print("Инициализация робота:", self.name)
+#         Robot.k += 1
+#
+#      def __del__(self):
+# #             print(self.name, "выключается!")
+# #         Robot.k -= 1
+# #
+# #         if Robot.k == 0:
+# #             print(self.name, "был последним")
+# #         else:
+# #             print("Работающих роботов осталось", Robot.k)
+#
+#     def say_hi(self):
+#         print(f"Приветствую, меня зовут", self.name)
+#
+#
+# droid1 = Robot("R2-D2")
+# droid1.say_hi()
+# print("Численность роботов:", Robot.k)
+#
+# droid2 = Robot("C-3PO")
+# droid2.say_hi()
+# print("Численность роботов:", Robot.k)
+#
+# droid3 = Robot("L-HO")
+# droid3.say_hi()
+# print("Численность роботов:", Robot.k)
+#
+# print("\nЗдесь роботы могут проделать какую-то работу.\n")
+#
+# print("Роботы закончили свою работу. Даваите их выключим.")
+#
+# del droid3
+# del droid2
+# del droid1
+#
+# print("Численность роботов:", Robot.k)
+
+# H W 07.04.24
+
+# class Car:
+#
+#     def __init__(self, name, year, maker, power, color, price):
+#         self.name = name
+#         self.year = year
+#         self.maker = maker
+#         self.power = power
+#         self.color = color
+#         self.price = price
+#
+#     def print_info(self):
+#         print(" Данные автомобиля ".center(40, "*"))
+#         print(f"Название модели: ", self.name, "\nГод выпуска:", self.year, "\nПроизвадитель: "
+#               , self.maker, "\nМощность двигателя: ", self.power, "\nЦвет машины: ", self.color, "\nЦена:", self.price)
+#         print("=" * 42)
+#
+#     def set_name(self):
+#         return self.name
+#
+#     def get_name(self):
+#         return self.name
+#
+#     def set_year(self):
+#         return self.year
+#
+#     def get_year(self):
+#         return self.year
+#
+#     def set_maker(self):
+#         return self.maker
+#
+#     def get_maker(self):
+#         return self.maker
+#
+#     def set_power(self):
+#         return self.power
+#
+#     def get_power(self):
+#         return self.power
+#
+#     def set_color(self):
+#         return self.color
+#
+#     def get_color(self):
+#         return self.color
+#
+#     def set_price(self):
+#         return self.price
+#
+#     def get_price(self):
+#         return self.price
+#
+#
+# c1 = Car("X7 M50i", 2021, "BMW", 530, "white", 1079000)
+# c1.print_info()
+# c1.set_name()
+# print(c1.get_name())
+# c1.set_year()
+# print(c1.get_year())
+# c1.set_maker()
+# print(c1.get_maker())
+# c1.set_power()
+# print(c1.get_power())
+# c1.set_color()
+# print(c1.get_color())
+# c1.set_price()
+# print(c1.get_price())
