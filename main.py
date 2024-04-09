@@ -2989,7 +2989,7 @@
 # Регулярные выражения
 # если какието совпадения то меняем
 
-import re
+# import re
 
 # s = "Я ищу совпадения в 2024 году. И я их наиду в 2 счёта."
 # reg = r"\."
@@ -3109,11 +3109,11 @@ import re
 #
 # print(new_login("m3y-p@sswOrd"))
 
-def new_login(name):
-    return re.findall("[A-Za-z0-9_-]+@[A-Za-z0-9_-]{6,18}", name)
-
-
-print(new_login("m3y-p@sswOrd"))
+# def new_login(name):
+#     return re.findall("[A-Za-z0-9_-]+@[A-Za-z0-9_-]{6,18}", name)
+#
+#
+# print(new_login("m3y-p@sswOrd"))
 
 
 
@@ -3488,20 +3488,20 @@ print(new_login("m3y-p@sswOrd"))
 # D Z 06.04.24
 
 
-# import os
-#
-# dir_name = "nested1"
-#
-# objs = os.listdir(dir_name)
-# print(objs)
-#
-# for obj in objs:
-#     p = os.path.join(dir_name, obj)
-#     # print(p)
-#     if os.path.isfile(p):
-#         print(f"{obj} - file - {os.path.getsize(p)} bytes")
-#     elif os.path.isdir(p):
-#         print(f"{obj} - dir")
+import os
+
+dir_name = "nested1"
+
+objs = os.listdir(dir_name)
+print(objs)
+
+for obj in objs:
+    p = os.path.join(dir_name, obj)
+    # print(p)
+    if os.path.isfile(p):
+        print(f"{obj} - file - {os.path.getsize(p)} bytes")
+    elif os.path.isdir(p):
+        print(f"{obj} - dir")
 
 # 07.04.2024
 
