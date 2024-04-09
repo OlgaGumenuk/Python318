@@ -3488,20 +3488,20 @@
 # D Z 06.04.24
 
 
-import os
-
-dir_name = "nested1"
-
-objs = os.listdir(dir_name)
-print(objs)
-
-for obj in objs:
-    p = os.path.join(dir_name, obj)
-    # print(p)
-    if os.path.isfile(p):
-        print(f"{obj} - file - {os.path.getsize(p)} bytes")
-    elif os.path.isdir(p):
-        print(f"{obj} - dir")
+# import os
+#
+# dir_name = "nested1"
+#
+# objs = os.listdir(dir_name)
+# print(objs)
+#
+# for obj in objs:
+#     p = os.path.join(dir_name, obj)
+#     # print(p)
+#     if os.path.isfile(p):
+#         print(f"{obj} - file - {os.path.getsize(p)} bytes")
+#     elif os.path.isdir(p):
+#         print(f"{obj} - dir")
 
 # 07.04.2024
 
@@ -3706,70 +3706,70 @@ for obj in objs:
 
 # H W 07.04.24
 
-# class Car:
-#
-#     def __init__(self, name, year, maker, power, color, price):
-#         self.name = name
-#         self.year = year
-#         self.maker = maker
-#         self.power = power
-#         self.color = color
-#         self.price = price
-#
-#     def print_info(self):
-#         print(" Данные автомобиля ".center(40, "*"))
-#         print(f"Название модели: ", self.name, "\nГод выпуска:", self.year, "\nПроизвадитель: "
-#               , self.maker, "\nМощность двигателя: ", self.power, "\nЦвет машины: ", self.color, "\nЦена:", self.price)
-#         print("=" * 42)
-#
-#     def set_name(self):
-#         return self.name
-#
-#     def get_name(self):
-#         return self.name
-#
-#     def set_year(self):
-#         return self.year
-#
-#     def get_year(self):
-#         return self.year
-#
-#     def set_maker(self):
-#         return self.maker
-#
-#     def get_maker(self):
-#         return self.maker
-#
-#     def set_power(self):
-#         return self.power
-#
-#     def get_power(self):
-#         return self.power
-#
-#     def set_color(self):
-#         return self.color
-#
-#     def get_color(self):
-#         return self.color
-#
-#     def set_price(self):
-#         return self.price
-#
-#     def get_price(self):
-#         return self.price
-#
-#
-# c1 = Car("X7 M50i", 2021, "BMW", 530, "white", 1079000)
-# c1.print_info()
-# c1.set_name()
-# print(c1.get_name())
-# c1.set_year()
-# print(c1.get_year())
-# c1.set_maker()
-# print(c1.get_maker())
-# c1.set_power()
-# print(c1.get_power())
-# c1.set_color()
-# print(c1.get_color())
-# c1.set_price()
-# print(c1.get_price())
+class Car:
+
+    def __init__(self, name, year, maker, power, color, price):
+        self.name = name
+        self.year = year
+        self.maker = maker
+        self.power = power
+        self.color = color
+        self.price = price
+
+    def print_info(self):
+        print(" Данные автомобиля ".center(40, "*"))
+        print(f"Название модели: ", self.name, "\nГод выпуска:", self.year, "\nПроизвадитель: "
+              , self.maker, "\nМощность двигателя: ", self.power, "\nЦвет машины: ", self.color, "\nЦена:", self.price)
+        print("=" * 42)
+
+    def set_name(self):
+        return self.name
+
+    def get_name(self):
+        return self.name
+
+    def set_year(self):
+        return self.year
+
+    def get_year(self):
+        return self.year
+
+    def set_maker(self):
+        return self.maker
+
+    def get_maker(self):
+        return self.maker
+
+    def set_power(self):
+        return self.power
+
+    def get_power(self):
+        return self.power
+
+    def set_color(self):
+        return self.color
+
+    def get_color(self):
+        return self.color
+
+    def set_price(self):
+        return self.price
+
+    def get_price(self):
+        return self.price
+
+
+c1 = Car("X7 M50i", 2021, "BMW", 530, "white", 1079000)
+c1.print_info()
+c1.set_name()
+print(c1.get_name())
+c1.set_year()
+print(c1.get_year())
+c1.set_maker()
+print(c1.get_maker())
+c1.set_power()
+print(c1.get_power())
+c1.set_color()
+print(c1.get_color())
+c1.set_price()
+print(c1.get_price())
