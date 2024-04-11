@@ -3260,20 +3260,20 @@
 
 # h w 30.03.2024
 
-def kuantity(list):  #-2, 3, 8, -11, -4, 6
-    count = 0
-    for elem in list:
-        if list[0] == "":
-            return
-        if list[0] == "," or list[0] == " " or list[0] >= 0:
-            count += kuantity(list[1:])
-        else:
-            count += 1
-    return count
-
-
-elems = [-2, 3, 8, -11, -4, 6]
-print("n = ", kuantity(elems))
+# def kuantity(list):  #-2, 3, 8, -11, -4, 6
+#     count = 0
+#     for elem in list:
+#         if list[0] == "":
+#             return
+#         if list[0] == "," or list[0] == " " or list[0] >= 0:
+#             count += kuantity(list[1:])
+#         else:
+#             count += 1
+#     return count
+#
+#
+# elems = [-2, 3, 8, -11, -4, 6]
+# print("n = ", kuantity(elems))
 
 
 # занятие за 31,03,24
@@ -3348,30 +3348,34 @@ print("n = ", kuantity(elems))
 # f.close()
 
 
-# 06 апреля 2024
 
-# file = "text2.txt"
-#
-# f = open(file, "w")
-# f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
-# f.close()
-#
-# f = open(file, 'r')
-# read_line = f.readlines()
-# f.close()
-#
-# print(read_line)
-# pos1 = int(input("pos1 = "))
-# pos2 = int(input("pos2 = "))
-# if 0 <= pos1 < len(read_line) and 0 <= pos2 < len(read_line):  # a, b = b, a
-#     read_line[pos1], read_line[pos2] = read_line[pos2], read_line[pos1]
-# else:
-#     print("Такой строки нет")
-# print(read_line)
-#
-# f = open(file, "w")
-# f.writelines(read_line)
-# f.close()
+# h w 31.03.2024
+
+
+file = "text2.txt"
+
+f = open(file, "w")
+f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
+f.close()
+
+f = open(file, 'r')
+read_line = f.readlines()
+f.close()
+
+print(read_line)
+pos1 = int(input("pos1 = "))
+pos2 = int(input("pos2 = "))
+if 0 <= pos1 < len(read_line) and 0 <= pos2 < len(read_line):  # a, b = b, a
+    read_line[pos1], read_line[pos2] = read_line[pos2], read_line[pos1]
+else:
+    print("Такой строки нет")
+print(read_line)
+
+f = open(file, "w")
+f.writelines(read_line)
+f.close()
+
+# 06 апреля 2024
 
 # file = "text2.txt"
 #
