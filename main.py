@@ -3117,7 +3117,6 @@
 
 
 
-
 # 30 марта 2024
 
 # import re
@@ -3193,7 +3192,11 @@
 #
 # n1 = int(input("На каком вы этаже: "))  # 5
 # elevator(n1)
-
+# 1
+# 2
+# 3
+# 4
+# 5
 
 # def sum_list(lst):
 #     res = 0
@@ -3203,17 +3206,15 @@
 
 # подругому еще смотреть внимательно
 
-# def sum_list(lst):  # [7, 9]
+# def sum_list(lst):  # [9]
 #     if len(lst) == 1:
-#         print(lst, "=> lst[0]:", lst[0])
 #         return lst[0]  # 9
 #     else:
-#         print(lst, "=> lst[0]:", lst[0])
-#         return lst[0] + sum_list(lst[1:])  # 1 + 3
+#         return lst[0] + sum_list(lst[1:])  # 1 + 3 + 5 + 7 + 9 итого  25
 #
 #
 # print(sum_list([1, 3, 5, 7, 9]))  # 25
-#  ЕЩЕ ДОПИСЫВАТЬ
+
 
 # def to_str(n, base):  # n = 354  // 10
 #     convert = "0123456789ABCDEF"
@@ -3223,11 +3224,11 @@
 #         return to_str(n // base, base) + convert[n % base]  # convert[354 % 10]это [4] => '4'
 #
 #
-# print(to_str(354, 10))
+# print(to_str(232, 16))
 
 
-# def count_items(item_list):  #
-#     count = 0  # 1 #3
+# def count_items(item_list):  # "Ann"
+#     count = 0  # 10
 #     for item in item_list:
 #         if isinstance(item, list):
 #             count += count_items(item)
@@ -3237,14 +3238,14 @@
 #
 #
 # names = ['Adam', ['Bob', ['Chat', 'Cat'], 'Bard', 'Bert'], 'Alex', ['Bea', 'Bill'], "Ann"]
-
-
-# print(names)
-# print(len(names))
-# print(isinstance(names, list))
-# print(isinstance(names[0], list))
-# print(isinstance(names[1][1][0], list))
+# # print(names)
+# # print(len(names))
+# # print(isinstance(names, list))
+# # print(isinstance(names[0], list))
+# # print(isinstance(names[1][1][0], list))
 # print(count_items(names))
+
+
 
 # def remove(text):  # " Hello\nWorld "
 #     if not text:  # text = ""
@@ -3257,9 +3258,22 @@
 #
 # print(remove(" Hello\nWorld "))
 
-# ЗАНЯТИЕ ЗА 24 МАРТА ПРОДОЛЖИТЬ КОНСПЕКТ САМОИ
+# h w 30.03.2024
 
-# ЗАНЯТИЕ ЗА 30 МАРТА ЕСТЬ КОНСПЕКТ НО РАЗОБРАТЬСЯ НАДО СМОИ!!!!!!!!!!!!!!!!!!!!
+def kuantity(list):  #-2, 3, 8, -11, -4, 6
+    count = 0
+    for elem in list:
+        if list[0] == "":
+            return
+        if list[0] == "," or list[0] == " " or list[0] >= 0:
+            count += kuantity(list[1:])
+        else:
+            count += 1
+    return count
+
+
+elems = [-2, 3, 8, -11, -4, 6]
+print("n = ", kuantity(elems))
 
 
 # занятие за 31,03,24
@@ -3706,70 +3720,70 @@
 
 # H W 07.04.24
 
-class Car:
-
-    def __init__(self, name, year, maker, power, color, price):
-        self.name = name
-        self.year = year
-        self.maker = maker
-        self.power = power
-        self.color = color
-        self.price = price
-
-    def print_info(self):
-        print(" Данные автомобиля ".center(40, "*"))
-        print(f"Название модели: ", self.name, "\nГод выпуска:", self.year, "\nПроизвадитель: "
-              , self.maker, "\nМощность двигателя: ", self.power, "\nЦвет машины: ", self.color, "\nЦена:", self.price)
-        print("=" * 42)
-
-    def set_name(self):
-        return self.name
-
-    def get_name(self):
-        return self.name
-
-    def set_year(self):
-        return self.year
-
-    def get_year(self):
-        return self.year
-
-    def set_maker(self):
-        return self.maker
-
-    def get_maker(self):
-        return self.maker
-
-    def set_power(self):
-        return self.power
-
-    def get_power(self):
-        return self.power
-
-    def set_color(self):
-        return self.color
-
-    def get_color(self):
-        return self.color
-
-    def set_price(self):
-        return self.price
-
-    def get_price(self):
-        return self.price
-
-
-c1 = Car("X7 M50i", 2021, "BMW", 530, "white", 1079000)
-c1.print_info()
-c1.set_name()
-print(c1.get_name())
-c1.set_year()
-print(c1.get_year())
-c1.set_maker()
-print(c1.get_maker())
-c1.set_power()
-print(c1.get_power())
-c1.set_color()
-print(c1.get_color())
-c1.set_price()
-print(c1.get_price())
+# class Car:
+#
+#     def __init__(self, name, year, maker, power, color, price):
+#         self.name = name
+#         self.year = year
+#         self.maker = maker
+#         self.power = power
+#         self.color = color
+#         self.price = price
+#
+#     def print_info(self):
+#         print(" Данные автомобиля ".center(40, "*"))
+#         print(f"Название модели: ", self.name, "\nГод выпуска:", self.year, "\nПроизвадитель: "
+#               , self.maker, "\nМощность двигателя: ", self.power, "\nЦвет машины: ", self.color, "\nЦена:", self.price)
+#         print("=" * 42)
+#
+#     def set_name(self):
+#         return self.name
+#
+#     def get_name(self):
+#         return self.name
+#
+#     def set_year(self):
+#         return self.year
+#
+#     def get_year(self):
+#         return self.year
+#
+#     def set_maker(self):
+#         return self.maker
+#
+#     def get_maker(self):
+#         return self.maker
+#
+#     def set_power(self):
+#         return self.power
+#
+#     def get_power(self):
+#         return self.power
+#
+#     def set_color(self):
+#         return self.color
+#
+#     def get_color(self):
+#         return self.color
+#
+#     def set_price(self):
+#         return self.price
+#
+#     def get_price(self):
+#         return self.price
+#
+#
+# c1 = Car("X7 M50i", 2021, "BMW", 530, "white", 1079000)
+# c1.print_info()
+# c1.set_name()
+# print(c1.get_name())
+# c1.set_year()
+# print(c1.get_year())
+# c1.set_maker()
+# print(c1.get_maker())
+# c1.set_power()
+# print(c1.get_power())
+# c1.set_color()
+# print(c1.get_color())
+# c1.set_price()
+# print(c1.get_price())
