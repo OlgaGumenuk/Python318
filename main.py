@@ -4421,7 +4421,7 @@
 #         return self.__color
 #
 #     @color.setter
-#     def color(selfself, c):
+#     def color(self, c):
 #         self.__color = c
 #
 #
@@ -4730,30 +4730,33 @@
 # домашка 21042024
 
 
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.note = self.Notebook()
+
+    def show(self):
+        print(self.name, end="")
+        self.note.show()
+
+    class Notebook:
+        def __init__(self):
+            self.brand = "HP"
+            self.cpu = 'i7'
+            self.ram = 16
+
+        def show(self):
+            print(f" => {self.brand}, {self.cpu}, {self.ram}")
+
+
+s1 = Student("Roman")
+s2 = Student("Vladimir")
+
+s1.show()
+s2.show()
+
+
 # class Student:
-#     def __init__(self, name):
-#         self.name = name
-#         self.note = self.Notebook()
-#
-#     def show(self):
-#         print(self.name, end="")
-#         self.note.show()
-#
-#     class Notebook:
-#         def __init__(self):
-#             self.brand = "HP"
-#             self.cpu = 'i7'
-#             self.ram = 16
-#
-#         def show(self):
-#             print(f" => {self.brand}, {self.cpu}, {self.ram}")
-#
-#
-# s1 = Student("Roman")
-# s2 = Student("Vladimir")
-#
-# s1.show()
-# s2.show()class Student:
 #     def __init__(self, name):
 #         self.name = name
 #         self.note = self.Notebook()
@@ -4882,12 +4885,12 @@
 #
 # list()
 
-class Point:
-    __slots__ = ('x', 'y')
-
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+# class Point:
+#     __slots__ = ('x', 'y')
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
 
 
 # p1 = Point(10, 20)
@@ -5278,44 +5281,45 @@ class Point:
 # print(c1.get_format_time())
 
 
-#hw 14042024
+# hw 14042024
 
-class Area:
-    count = 0
+# class Area:
+#     count = 0
+#
+#     @staticmethod
+#     def geron(a, b, c):
+#         p1, s1 = 1, 1
+#         p1 = 0.5 * (a + b + c)
+#         s1 = p1 * (p1 - a) * (p1 - b) * (p1 - c)
+#         Area.count += 1
+#         return s1
+#
+#     @staticmethod
+#     def side_heigth(x, h):
+#         s2 = x * (h / 2)
+#         Area.count += 1
+#         return s2
+#
+#     @staticmethod
+#     def square(y):
+#         s3 = y * y
+#         Area.count += 1
+#         return s3
+#
+#     @staticmethod
+#     def rectangle(a1, a2):
+#         s4 = a1 * a2
+#         Area.count += 1
+#         return s4
+#
+#     @staticmethod
+#     def get_count():
+#         return count
+#
+#
+# print("Площадь треугольника по формуле Герона (3, 4, 5): ", Area.geron(3, 4, 5))
+# print("Площадь треугольника через основание и высоту (6, 7): ", Area.side_heigth(6, 7))
+# print("Площадь квадрата:", Area.square(7))
+# print("Площадь прямоугольника: ", Area.rectangle(2, 6))
+# print("Количество подсчетов площади: ", Area.count)
 
-    @staticmethod
-    def geron(a, b, c):
-        p1, s1 = 1, 1
-        p1 = 0.5 * (a + b + c)
-        s1 = p1 * (p1 - a) * (p1 - b) * (p1 - c)
-        Area.count += 1
-        return s1
-
-    @staticmethod
-    def side_heigth(x, h):
-        s2 = x * (h / 2)
-        Area.count += 1
-        return s2
-
-    @staticmethod
-    def square(y):
-        s3 = y * y
-        Area.count += 1
-        return s3
-
-    @staticmethod
-    def rectangle(a1, a2):
-        s4 = a1 * a2
-        Area.count += 1
-        return s4
-
-    @staticmethod
-    def get_count():
-        return count
-
-
-print("Площадь треугольника по формуле Герона (3, 4, 5): ", Area.geron(3, 4, 5))
-print("Площадь треугольника через основание и высоту (6, 7): ", Area.side_heigth(6, 7))
-print("Площадь квадрата:", Area.square(7))
-print("Площадь прямоугольника: ", Area.rectangle(2, 6))
-print("Количество подсчетов площади: ", Area.count)
