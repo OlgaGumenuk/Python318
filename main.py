@@ -4412,31 +4412,56 @@
 # print(line._sp)
 
 
-# class Figure:
-#     def __init__(self, color):
-#         self.color = color
-#
-#     @property
-#     def color(self):
-#         return self.__color
-#
-#     @color.setter
-#     def color(self, c):
-#         self.__color = c
-#
-#
-# class Rectangle(Figure):
-#     def __init__(self, width, height, color):
-#         self.__width = width
-#         self.__height = height
-#         super().__init__(color)
-#
-#     def area(self):
-#         print(f"Прямоугольник {self.color}. Площадь:", end="")
-#         return self.__width * self.__height
-#
-#
-# rect = Rectangle(10, 20, "green")
+# hw 20 04 2024
+class Figure:
+    def __init__(self, color):
+        self.color = color
+
+    @property
+    def color(self):
+        return self.__color
+
+    @color.setter
+    def color(self, c):
+        self.__color = c
+
+
+class Rectangle(Figure):
+    def __init__(self, width, height, color):
+        super().__init__(color)
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if value < 0:
+            raise ValueError(f"Значение {value} должно быть положительным числом")
+        self.__width = value
+
+    @property
+    def height(self, value):
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if value < 0:
+            raise ValueError(f"Значение {value} должно быть положительным числом")
+        self.__height = value
+
+    def area(self):
+        print(f"Прямоугольник {self.color}. Площадь:", end="")
+        return self.__width * self.__height
+
+
+rect = Rectangle(10, 20, "green")
+print("Создать защиту, чтобы прямоугольник существовал")
+# rect.width = -30
+print(rect.area())
+
 
 
 # 21 апреля Наследование от встроенных типов
@@ -4730,30 +4755,30 @@
 # домашка 21042024
 
 
-class Student:
-    def __init__(self, name):
-        self.name = name
-        self.note = self.Notebook()
-
-    def show(self):
-        print(self.name, end="")
-        self.note.show()
-
-    class Notebook:
-        def __init__(self):
-            self.brand = "HP"
-            self.cpu = 'i7'
-            self.ram = 16
-
-        def show(self):
-            print(f" => {self.brand}, {self.cpu}, {self.ram}")
-
-
-s1 = Student("Roman")
-s2 = Student("Vladimir")
-
-s1.show()
-s2.show()
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
+#         self.note = self.Notebook()
+#
+#     def show(self):
+#         print(self.name, end="")
+#         self.note.show()
+#
+#     class Notebook:
+#         def __init__(self):
+#             self.brand = "HP"
+#             self.cpu = 'i7'
+#             self.ram = 16
+#
+#         def show(self):
+#             print(f" => {self.brand}, {self.cpu}, {self.ram}")
+#
+#
+# s1 = Student("Roman")
+# s2 = Student("Vladimir")
+#
+# s1.show()
+# s2.show()
 
 
 # class Student:
