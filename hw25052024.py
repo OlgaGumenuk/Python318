@@ -20,9 +20,12 @@ def get_data(html):
     soup = BeautifulSoup(html, "html.parser")  # вместо "html.parser" можно "lxml" парсер
     p1 = soup.find("ul", class_="production__tabs flex flex-wrap flex-justify-center")
     spans = p1.find_all('span')
-    print(spans)
-    url = soup.find_all("a")[1].get("href")
-    print(url)
+    # print(spans)
+    for s in spans:
+        span = s.text
+        print(span)
+        url = soup.find_all("a")[1].get("href")
+        print(url)
 
 
 def main():

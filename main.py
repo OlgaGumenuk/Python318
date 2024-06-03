@@ -5543,140 +5543,337 @@
 # for animal in (cat, dog):
 #     animal.info()
 #     animal.make_sound()
+#
+#
+# # class Human:
+# #     def __init__(self, surname, name, age):
+# #         self.surname = surname
+# #         self.name = name
+# #         self.age = age
+# #
+# #     def info(self):
+# #         print(f"\n{self.surname} {self.name} {self.age}", end=" ")
+# #
+# # class Student(Human):
+# #     def __init__(self, surname, name, age, speciality, group, rating):
+# #         super().__init__(surname, name, age)
+# #         self.speciality = speciality
+# #         self.group = group
+# #         self.rating = rating
+# #
+# #     def info(self):
+# #         super().info()
+# #         print(f"{self.speciality} {self.group} {self.rating}", end="")
+# #
+# #
+# # class Teacher(Human):
+# #     def __init__(self, surname, name, age, speciality, skill):
+# #         super().__init__(surname, name, age)
+# #         self.speciality = speciality
+# #         self.skill = skill
+# #
+# #     def info(self):
+# #         super().info()
+# #         print(f"{self.speciality} {self.skill}", end="")
+# #
+# #
+# # class Graduate(Student):
+# #     def __init__(self, surname, name, age, speciality, group, rating, topic):
+# #         super().__init__(surname, name, age, speciality, group, rating)
+# #         self.topic = topic
+# #
+# #     def info(self):
+# #         super().info()
+# #         print(f" {self.topic}", end="")
+# #
+# #
+# # group = [
+# #  Student("Батодалаев", "Даши", 16, "ГК", "Web_011", 5),
+# #  Student("Загидуллин", "Линар", 32, "РПО", "PD_011", 5),
+# #  Graduate("Шугани", "Сергей", 15, "РПО", "PD_011", 5, "Защита персональных данных"),
+# #  Teacher("Даньшин", "Андрей", 38, "Астрофизика", 110),
+# #  Student("Маркин", "Даниил", 17, "ГК", "Python_011", 5),
+# #  Teacher("Башкиров", "Алексей", 45, "Разработка приложений", 20)
+# # ]
+# # for i in group:
+# #     i.info()
+#
+#
+# # Функторы (перегрузка круглых скобок)
+#
+# # хотим посчитать сколько раз после экземпляра класса мы поставили круглые скоки
+# # class Counter:
+# #     def __init__(self):
+# #         self.__count = 0
+# #
+# #     def __call__(self, *args, **kwargs):
+# #         self.__count += 1
+# #         print(self.__count)
+# #
+# #
+# # c1 = Counter()
+# # c1()
+# # c1()
+# # c1()
+# # c1()
+# # c1()
+#
+#
+# # вспоминаем как работает замыкание
+# # def string_strip(chars):
+# #     def wrap(string):
+# #         if not isinstance(string, str):
+# #             raise ValueError("Аргумент должен быть строкои")
+# #         return string.strip(chars)
+# #
+# #     return wrap
+# #
+# #
+# # s1 = string_strip("?:!.; ")
+# # print(s1(" Hello World!  "))
+# # print(s1(" ? Hell.o World!   ").strip("?! "))
+#
+#
+# # class StringStrip:
+# #     def __init__(self, chars):
+# #         self.__chars = chars
+# #
+# #     def __call__(self, string):  # *args, **kwargs
+# #         if not isinstance(string, str):
+# #             raise ValueError("Аргумент должен быть строкои")
+# #         return string.strip(self.__chars)
+# #
+# #
+# #
+# #
+# # s2 = StringStrip("?:!.; ")
+# # print(s2(" Hello World!  "))
+#
+#
+# # class StringStrip1:
+# #     def __init__(self, chars):
+# #         self.__chars = chars
+# #
+# #     def __call__(self, *args, **kwargs):
+# #         if not isinstance(args[0], str):
+# #             raise ValueError("Аргумент должен быть строкои")
+# #         return args[0].strip(self.__chars)
+# #
+# #
+# # s3 = StringStrip1("?:!.; ")
+# # print(s3(" Hello World!  "))
+#
+# # def my_decorator(fn):
+# #     def wrap():
+# #         print("Перед вызова функции")
+# #         fn()
+# #         print("Перед вызова функции")
+# #     return wrap
+# #
+# #
+# # @my_decorator
+# # def func():
+# #     print("func")
+# #
+# #
+# # func()
+#
+#
+# # class MyDecorator:
+# #     def __init__(self, fn):
+# #         self.fn = fn
+# #
+# #     def __call__(self, a, b):
+# #         res = self.fn(a, b)
+# #         print("Перед вызовom функции\n" + str(res) + "\nПосле вызова функции")
+# #         return res
+# #
+# #
+# # @MyDecorator
+# # def func1(a, b):
+# #     return a * b
+# #
+# #
+# # print(func1(2, 5))
+#
+#
+# # class Power:
+# #     def __init__(self, func):
+# #         self.func = func
+# #
+# #     def __call__(self, a, b):
+# #         return self.func(a, b) ** 2
+# #
+# #
+# # @Power
+# # def mult(a, b):
+# #     return a * b
+# #
+# #
+# # print(mult(2, 3))
+#
+#
+# # class Power:
+# #     def __init__(self, func):
+# #         self.func = func
+# #
+# #     def __call__(self, *args, **kwargs):
+# #         print("-" * 40)
+# #         print("*args:", args)
+# #         print("*kwargs:", kwargs)
+# #         return self.func(*args, **kwargs)
+# #
+# #
+# # @Power
+# # def mult(a, b):
+# #     return a * b
+# #
+# #
+# # @Power
+# # def mult1(a, b, c):
+# #     return a * b * c
+# #
+# #
+# # print(mult(2, 3))
+# # print(mult1(2, 3, 4))
+# # print(mult1(2, c=3, b=4))
+#
+#
+# #
+# # def outer(arg):
+# #     def my_decorator(fn):
+# #         def wrap():
+# #             print(f"Перед вызовom функции, выведем {arg}")
+# #             fn()
+# #             print("Перед вызова функции")
+# #         return wrap
+# #     return my_decorator
+# #
+# #
+# # @outer("test")
+# # def func():
+# #     print("func")
+# #
+# #
+# # func()
+#
+#
+# # class MyDecorator:
+# #     def __init__(self, arg):
+# #         self.arg = arg
+# #
+# #     def __call__(self, fn):
+# #         def wrap(a, b):
+# #             print(f"Перед вызовom функции{self.arg}")
+# #             fn(a, b)
+# #             print("После вызова функции")
+# #         return wrap
+# #
+# #
+# #
+# # @MyDecorator("test")
+# # def func1(a, b):
+# #     print(a, b)
+# #
+# #
+# # func1(2, 5)
+#
+#
+# # class Power:
+# #     def __init__(self, arg):
+# #         self.arg = arg
+# #
+# #     def __call__(self, fn):
+# #         def wrap(a, b):
+# #             return fn(a, b) ** self.arg
+# #         return wrap
+# #
+# #
+# # @Power(5)
+# # def mult(a, b):
+# #     return a * b
+# #
+# #
+# # print(mult(2, 2))
+# #
+# #
+# #
+# # from ABC import ABC, abstractmethod
+# #
+# #
+# # # Декорирование методов
+# #
+# #
+# # # def dec(fn):
+# # #     def wrap(*args, **kwargs):
+# # #         print("*" * 20)
+# # #         fn(*args, **kwargs)
+# # #         print("*" * 20)
+# # #     return wrap
+# # #
+# # #
+# # # class Person:
+# # #     def __init__(self, name, surname):
+# # #         self.name = name
+# # #         self.surname = surname
+# # #
+# # #     @dec
+# # #     def info(self):
+# # #         print(f"{self.name} {self.surname}")
+# # #
+# # #
+# # # p1 = Person("Виталии", "Карасев")
+# # # p1.info()
+#
+#
+# #hw_do_14052024
+#
+# from abc import ABC, abstractmethod
+# class Shape:
+#     def __init__(self, color):
+#         self.color = color
+#
+#
+# class Skwuare(Shape):
+#     def __init__(self, a):
+#         self.side = side
+#         su
 
 
-# class Human:
-#     def __init__(self, surname, name, age):
-#         self.surname = surname
-#         self.name = name
-#         self.age = age
+# class Rectangle(Shape):
+#     def __init__(self, w, h):
+#         self.w = w
+#         self.h = h
 #
-#     def info(self):
-#         print(f"\n{self.surname} {self.name} {self.age}", end=" ")
-#
-# class Student(Human):
-#     def __init__(self, surname, name, age, speciality, group, rating):
-#         super().__init__(surname, name, age)
-#         self.speciality = speciality
-#         self.group = group
-#         self.rating = rating
-#
-#     def info(self):
-#         super().info()
-#         print(f"{self.speciality} {self.group} {self.rating}", end="")
+#     def get_perimeter(self):
+#         return 2 * (self.w + self.h)
 #
 #
-# class Teacher(Human):
-#     def __init__(self, surname, name, age, speciality, skill):
-#         super().__init__(surname, name, age)
-#         self.speciality = speciality
-#         self.skill = skill
+# class Triangle(Shape):
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
 #
-#     def info(self):
-#         super().info()
-#         print(f"{self.speciality} {self.skill}", end="")
-#
-#
-# class Graduate(Student):
-#     def __init__(self, surname, name, age, speciality, group, rating, topic):
-#         super().__init__(surname, name, age, speciality, group, rating)
-#         self.topic = topic
-#
-#     def info(self):
-#         super().info()
-#         print(f" {self.topic}", end="")
-#
-#
-# group = [
-#  Student("Батодалаев", "Даши", 16, "ГК", "Web_011", 5),
-#  Student("Загидуллин", "Линар", 32, "РПО", "PD_011", 5),
-#  Graduate("Шугани", "Сергей", 15, "РПО", "PD_011", 5, "Защита персональных данных"),
-#  Teacher("Даньшин", "Андрей", 38, "Астрофизика", 110),
-#  Student("Маркин", "Даниил", 17, "ГК", "Python_011", 5),
-#  Teacher("Башкиров", "Алексей", 45, "Разработка приложений", 20)
-# ]
-# for i in group:
-#     i.info()
+#     def get_perimeter(self):
+#         return self.a + self.b + self.c
 
 
-# Функторы (перегрузка круглых скобок)
-
-# хотим посчитать сколько раз после экземпляра класса мы поставили круглые скоки
-# class Counter:
-#     def __init__(self):
-#         self.__count = 0
-#
-#     def __call__(self, *args, **kwargs):
-#         self.__count += 1
-#         print(self.__count)
-#
-#
-# c1 = Counter()
-# c1()
-# c1()
-# c1()
-# c1()
-# c1()
 
 
-# вспоминаем как работает замыкание
-# def string_strip(chars):
-#     def wrap(string):
-#         if not isinstance(string, str):
-#             raise ValueError("Аргумент должен быть строкои")
-#         return string.strip(chars)
-#
-#     return wrap
-#
-#
-# s1 = string_strip("?:!.; ")
-# print(s1(" Hello World!  "))
-# print(s1(" ? Hell.o World!   ").strip("?! "))
 
 
-# class StringStrip:
-#     def __init__(self, chars):
-#         self.__chars = chars
-#
-#     def __call__(self, string):  # *args, **kwargs
-#         if not isinstance(string, str):
-#             raise ValueError("Аргумент должен быть строкои")
-#         return string.strip(self.__chars)
-#
-#
-#
-#
-# s2 = StringStrip("?:!.; ")
-# print(s2(" Hello World!  "))
 
 
-# class StringStrip1:
-#     def __init__(self, chars):
-#         self.__chars = chars
-#
-#     def __call__(self, *args, **kwargs):
-#         if not isinstance(args[0], str):
-#             raise ValueError("Аргумент должен быть строкои")
-#         return args[0].strip(self.__chars)
-#
-#
-# s3 = StringStrip1("?:!.; ")
-# print(s3(" Hello World!  "))
 
 
-# Когда класс работает как декоратор
 
 
-# class MyDecorator:
-#     ...
-#
-#
-# @MyDecorator
-# def func():
-#     print("func")
-#
-#
-# func()
+
+
+
+
+
 
 
 # 18 05 2024
@@ -5844,121 +6041,120 @@
 # group2.jornal_groups(files_group)
 
 
-import json
-
-data = {}
-
-
-class CountryCapital:
-    def __init__(self, country, capital):
-        self.country = country
-        self.capital = capital
-        data[self.country] = self.capital
-
-    def __str__(self):
-        return f"{self.country}: {self.capital}"
-
-    @staticmethod
-    def load_data(filename):
-        try:
-            date = json.load(open(filename))
-        except FileNotFoundError:
-            date = {}
-        finally:
-            return date
-
-    @staticmethod
-    def add_country(filename):
-        country_name = input("Введите название страны: ")
-        capital_name = input("Введите название столицы: ")
-        # try:
-        #     date = json.load(open(filename))
-        # except FileNotFoundError:
-        #     date = {}
-        date = CountryCapital.load_data(filename)
-
-        date[country_name] = capital_name
-        with open(filename, "w") as f:
-            json.dump(date, f, indent=2)
-
-    @staticmethod
-    def load_from_file(filename):
-        with open(filename, "r") as f:
-            print(json.load(f))
-
-    @staticmethod
-    def delete_country(filename):
-        del_country = input("Введите название страны: ")
-
-        # try:
-        #     date = json.load(open(filename))
-        # except FileNotFoundError:
-        #     date = {}
-        date = CountryCapital.load_data(filename)
-
-
-        if del_country in date:
-            del date[del_country]
-
-            with open(filename, "w") as f:
-                json.dump(date, f, indent=2)
-        else:
-            print("Такой страны в базе нет")
-
-    @staticmethod
-    def search_data(filename):
-        country = input("Введите название страны: ")
-
-        # try:
-        #     date = json.load(open(filename))
-        # except FileNotFoundError:
-        #     date = {}
-        date = CountryCapital.load_data(filename)
-
-        if country in date:
-            print(f"Страна {country} столица {date[country]} есть в словаре")
-        else:
-            print(f"Страны {country} нет в словаре")
-
-    @staticmethod
-    def edit_data(filename):
-        country = input("Введите страну для корректировки: ")
-        new_capital = input("Введите новое название столицы: ")
-
-        # try:
-        #     date = json.load(open(filename))
-        # except FileNotFoundError:
-        #     date = {}
-        date = CountryCapital.load_data(filename)
-
-        if country in date:
-            date[country] = new_capital
-            with open(filename, "w") as f:
-                json.dump(date, f, indent=2)
-        else:
-            print("Такой страны в базе нет")
-
-
-file = 'list_capital.json'
-index = ''
-while True:
-    index = input("Выбор действия:\n1 - добавление данных\n2 - удаление данных\n3 - поиск данных\n4 - "
-                  "редактирование данных\n5 - просмотр данных\n6 - завершение работы\nВвод: ")
-    if index == "1":
-        CountryCapital.add_country(file)
-    elif index == "2":
-        CountryCapital.delete_country(file)
-    elif index == "3":
-        CountryCapital.search_data(file)
-    elif index == "4":
-        CountryCapital.edit_data(file)
-    elif index == "5":
-        CountryCapital.load_from_file(file)
-    elif index == "6":
-        break
-    else:
-        print("Введен некорректный номер")
-
+# import json
+#
+# data = {}
+#
+#
+# class CountryCapital:
+#     def __init__(self, country, capital):
+#         self.country = country
+#         self.capital = capital
+#         data[self.country] = self.capital
+#
+#     def __str__(self):
+#         return f"{self.country}: {self.capital}"
+#
+#     @staticmethod
+#     def load_data(filename):
+#         try:
+#             date = json.load(open(filename))
+#         except FileNotFoundError:
+#             date = {}
+#         finally:
+#             return date
+#
+#     @staticmethod
+#     def add_country(filename):
+#         country_name = input("Введите название страны: ")
+#         capital_name = input("Введите название столицы: ")
+#         # try:
+#         #     date = json.load(open(filename))
+#         # except FileNotFoundError:
+#         #     date = {}
+#         date = CountryCapital.load_data(filename)
+#
+#         date[country_name] = capital_name
+#         with open(filename, "w") as f:
+#             json.dump(date, f, indent=2)
+#
+#     @staticmethod
+#     def load_from_file(filename):
+#         with open(filename, "r") as f:
+#             print(json.load(f))
+#
+#     @staticmethod
+#     def delete_country(filename):
+#         del_country = input("Введите название страны: ")
+#
+#         # try:
+#         #     date = json.load(open(filename))
+#         # except FileNotFoundError:
+#         #     date = {}
+#         date = CountryCapital.load_data(filename)
+#
+#
+#         if del_country in date:
+#             del date[del_country]
+#
+#             with open(filename, "w") as f:
+#                 json.dump(date, f, indent=2)
+#         else:
+#             print("Такой страны в базе нет")
+#
+#     @staticmethod
+#     def search_data(filename):
+#         country = input("Введите название страны: ")
+#
+#         # try:
+#         #     date = json.load(open(filename))
+#         # except FileNotFoundError:
+#         #     date = {}
+#         date = CountryCapital.load_data(filename)
+#
+#         if country in date:
+#             print(f"Страна {country} столица {date[country]} есть в словаре")
+#         else:
+#             print(f"Страны {country} нет в словаре")
+#
+#     @staticmethod
+#     def edit_data(filename):
+#         country = input("Введите страну для корректировки: ")
+#         new_capital = input("Введите новое название столицы: ")
+#
+#         # try:
+#         #     date = json.load(open(filename))
+#         # except FileNotFoundError:
+#         #     date = {}
+#         date = CountryCapital.load_data(filename)
+#
+#         if country in date:
+#             date[country] = new_capital
+#             with open(filename, "w") as f:
+#                 json.dump(date, f, indent=2)
+#         else:
+#             print("Такой страны в базе нет")
+#
+#
+# file = 'list_capital.json'
+# index = ''
+# while True:
+#     index = input("Выбор действия:\n1 - добавление данных\n2 - удаление данных\n3 - поиск данных\n4 - "
+#                   "редактирование данных\n5 - просмотр данных\n6 - завершение работы\nВвод: ")
+#     if index == "1":
+#         CountryCapital.add_country(file)
+#     elif index == "2":
+#         CountryCapital.delete_country(file)
+#     elif index == "3":
+#         CountryCapital.search_data(file)
+#     elif index == "4":
+#         CountryCapital.edit_data(file)
+#     elif index == "5":
+#         CountryCapital.load_from_file(file)
+#     elif index == "6":
+#         break
+#     else:
+#         print("Введен некорректный номер")
 
 
 # 19 05 2024
@@ -6314,3 +6510,37 @@ while True:
 #
 # if __name__ == '__main__':
 #     main()
+
+
+
+
+
+
+
+
+
+# 02 06 2024 введение в базы данных
+
+import sqlite3
+
+
+# con = sqlite3.connect("profile.db")
+# cur = con.cursor()
+#
+# cur.execute("""
+# """)
+#
+# con.close()
+
+
+with sqlite3.connect("profile.db") as con:
+    cur = con.cursor()
+
+    cur.execute("""CREATE TABLE IF NOT EXISTS users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    summa REAL,
+    date BLOB)""")
+
+    cur.execute("DROP TABLE users")
+
