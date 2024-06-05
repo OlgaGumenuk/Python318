@@ -11,6 +11,8 @@
 # print(type(c))
 # a = "Hello"
 # print(a, type(a))
+import math
+
 
 # b = 5
 # print(b, type(b))
@@ -5827,54 +5829,97 @@
 #
 #
 # #hw_do_14052024
-#
-# from abc import ABC, abstractmethod
-# class Shape:
-#     def __init__(self, color):
-#         self.color = color
-#
-#
-# class Skwuare(Shape):
-#     def __init__(self, a):
-#         self.side = side
-#         su
-
-
-# class Rectangle(Shape):
-#     def __init__(self, w, h):
-#         self.w = w
-#         self.h = h
-#
-#     def get_perimeter(self):
-#         return 2 * (self.w + self.h)
-#
-#
-# class Triangle(Shape):
-#     def __init__(self, a, b, c):
-#         self.a = a
-#         self.b = b
-#         self.c = c
-#
-#     def get_perimeter(self):
-#         return self.a + self.b + self.c
 
 
 
+import math
+class Shape:
+    def __init__(self, color):
+        self.color = color
+
+    def get_perimeter(self):
+        raise NotImplementedError("В дочернем классе должен быть определен метод get_perimeter")
+
+    def get_area(self):
+        raise NotImplementedError("В дочернем классе должен быть определен метод get_area")
+
+    def draw(self):
+        raise NotImplementedError("В дочернем классе должен быть определен метод draw")
+
+    def info(self):
+        raise NotImplementedError("В дочернем классе должен быть определен метод info")
 
 
+class Skwuare(Shape):
+    def __init__(self, side, color):
+        self.side = side
+        super().__init__(color)
+
+    def get_perimeter(self):
+        return self.side * 4
+
+    def get_area(self):
+        return self.side * self.side
+
+    def draw(self):
+        return ("*  " * self.side + "\n") * self.side
+
+    def info(self):
+        print(f"=== Квадрат ===\nСторона: {self.side}\nЦвет: {self.color}\nПериметр: {self.get_perimeter()}"
+              f"\nПлощадь: {self.get_area()}\n{self.draw()}")
 
 
+class Rectangle(Shape):
+    def __init__(self, length, width, color):
+        self.length = length
+        self.width = width
+        super().__init__(color)
+
+    def get_perimeter(self):
+        return (self.length + self.width) * 2
+
+    def get_area(self):
+        return self.length * self.width
+
+    def draw(self):
+        return ("*  " * self.width + "\n") * self.length
+
+    def info(self):
+        print(f"=== Прямоугольник ===\nДлина: {self.length}\nШирина: {self.width}\nЦвет: {self.color}\nПериметр:"
+              f" {self.get_perimeter()}\nПлощадь: {self.get_area()}\n{self.draw()}")
 
 
+class Triangle(Shape):
+    def __init__(self, side_a, side_b, side_c, color):
+        self.side_a = side_a
+        self.side_b = side_b
+        self.side_c = side_c
+        super().__init__(color)
+
+    def get_perimeter(self):
+        return (self.side_a + self.side_b + self.side_c) / 2
+
+    def get_area(self):
+        p = self.get_perimeter()
+        return (math.sqrt(p * (p - self.side_a) * (p - self.side_b) * (p - self.side_c)), 2)
+
+    def draw(self):
+        row = []
+        for n in range(self.side_b):
+            row.append(" " * n + "*" * (self.side_a - 2 * n) + " " * n)
+        return "\n".join(sorted(row))
+
+    def info(self):
+        print(
+            f"=== Треугольник ===\nСторона 1 : {self.side_a}\nСторона 2 : {self.side_b}\nСторона 3: {self.side_c}\nЦвет:"
+            f" {self.color}\nПериметр: {self.get_perimeter()}\nПлощадь: {self.get_area()}\n{self.draw()}")
 
 
+figs = [Skwuare(3, "red"), Rectangle(3, 7, "green"), Triangle(11, 6, 6,
+                                                              "yellow")]
 
-
-
-
-
-
-
+for g in figs:
+    g.info()
 
 # 18 05 2024
 
@@ -6512,16 +6557,9 @@
 #     main()
 
 
-
-
-
-
-
-
-
 # 02 06 2024 введение в базы данных
 
-import sqlite3
+# import sqlite3
 
 
 # con = sqlite3.connect("profile.db")
@@ -6533,14 +6571,13 @@ import sqlite3
 # con.close()
 
 
-with sqlite3.connect("profile.db") as con:
-    cur = con.cursor()
-
-    cur.execute("""CREATE TABLE IF NOT EXISTS users(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    summa REAL,
-    date BLOB)""")
-
-    cur.execute("DROP TABLE users")
-
+# with sqlite3.connect("profile.db") as con:
+#     cur = con.cursor()
+#
+#     cur.execute("""CREATE TABLE IF NOT EXISTS users(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL,
+#     summa REAL,
+#     date BLOB)""")
+#
+#     cur.execute("DROP TABLE users")
