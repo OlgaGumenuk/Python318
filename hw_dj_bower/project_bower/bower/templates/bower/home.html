@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h2>Начало пути к отдыху у своего дома!</h2>
+    {{ address }}
+    <p></p>
+    {{ telephon }}
+    <h3>Стилистика беседки может быть: </h3>
+    <form action="{% url 'stylebower' %}">
+        <select name="length">
+            <option value="1">Японская</option>
+            <option value="2">Русская</option>
+            <option value="3">Грузинская</option>
+            <option value="4">Скандинавская</option>
+            <option value="5">Зимняя</option>
+        </select>
+        <input type="submit" value="Выберите свою">
+    </form>
+    <p>Зарегистироваться:</p>
+    <form action="{% url 'registration' %}">
+        <input type="submit" value="Зарегистироваться">
+    </form>
+
+</body>
+</html>

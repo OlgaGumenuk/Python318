@@ -2,6 +2,10 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/first/password_generator_project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/second/personal_portfolio" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homeproject/home_project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hw_dj_bower/project_bower" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
