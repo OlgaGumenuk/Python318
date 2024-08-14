@@ -1,0 +1,14 @@
+{% extends 'new_about/base.html' %}
+{% block content %}
+
+<h1>Блог создателя</h1>
+{% for new_make in new_maiking %}
+    <div class="element">
+        <h2 class="top">{{ new_make.title }}</h2>
+        <div class="blog_text">
+            <h5>{{ new_make.date }}</h5>
+            <p>{{ new_make.description|truncatechars:360 }}</p>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

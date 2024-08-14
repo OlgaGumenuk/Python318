@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/second/personal_portfolio" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/homeproject/home_project" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hw_dj_bower/project_bower" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/third/todos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/second_hw/bower_again" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
