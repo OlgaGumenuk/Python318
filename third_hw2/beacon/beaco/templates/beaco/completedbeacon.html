@@ -1,0 +1,24 @@
+{% extends 'beaco/base.html' %}
+
+{% block content %}
+
+<h1>Завершено</h1>
+<ul>
+    {% for beaco in beacon %}
+    <li>
+        <a href="#">
+        {% if beaco.important %}
+        <b>{{ beaco.title }}</b>
+        {% else %}
+        {{ beaco.title }}
+        {% endif %}
+
+        {% if beaco.memo %}
+        - {{ beaco.memo }}
+        {% endif %}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -3118,6 +3118,11 @@
 #
 # print(remove(" Hello\nWorld "))
 
+
+# РПАБОТА С ФАИЛАМИ
+
+
+
 # f = open("test.txt", "r")
 # f = open(r"D:\Python318\318\test.txt", "r")
 # print(f)
@@ -3129,26 +3134,28 @@
 # print(f.closed)
 
 # f = open("test.txt", "r")
-# print(f.read(3))
-# # print(f.read())
+# print(f.read(3)) cчитает только индексы 0 1 2 тлько три буквы
+# # print(f.read()) дочитает остальное
 # f.close()
 #
 # f = open("test.txt", "r")
-# print(f.read())
+# print(f.read()) считает полностью
 # f.close()
 
 
 # f = open("test1.txt", "r")
-# print(f.readline())
-# print(f.readline(8))
-# print(f.readline())
+# print(f.readline()) считает только одну строку пока не будет переноса на др строку
+# в конце строки неяявно стоит /n и плюс принт, будет большое расстояние да след строки
+# print(f.readline(8)) считает столькото символов
+# print(f.readline()) дочитает
 # print(f.readline())
 # f.close()
 
 
 # f = open("test1.txt", "r")
-# # print(f.readlines(26))
-# print("count =", len(f.readlines()))
+# # print(f.readlines()) считает как Список строк
+# # print(f.readlines(26)) если хотя бы одна буква считывается из строки, то берет полностью строку эту
+# print("count =", len(f.readlines())) может
 # f.close()
 
 
@@ -3166,17 +3173,23 @@
 # f.close()
 # print("count =", count)
 
-# f = open("xyz.txt", "w")
-# f.write("Hello\nWorld!!!!")
+# f = open("xyz.txt", "w") откроет фаил
+# f.write("Hello\nWorld!!!!") запишет в него чтото
+# при повторном открытии фаил очистится!!!!
 # f.close()
 
-# f = open("xyz1.txt", "a")
-# f.write("\nNew text")
+#  Режимы открытия фаила
+# основные режимы r w a
+
+
+# f = open("xyz1.txt", "a") # а-режим дозапишет
+# f.write("\nNew text") # при каждом открытии фаила будет дозаписыват много раз
+# w-кажды раз очищает и перезаписывает а-дозаписывает
 # f.close()
 
 # line = ['This is line 1\n', 'This is line 2\n']
 # f = open("xyz.txt", "w")
-# f.writelines(line)
+# f.writelines(line)  # одно общее содержимое
 # f.close()
 
 
@@ -3200,20 +3213,20 @@
 # print(lst)
 #
 # f = open("xyz.txt", "w")
-# f.write("\t".join(map(str, lst)))
-# f.close()
+# f.write("\t".join(map(str, lst))) # join- из списка в строку
+# f.close() # map- преобразует каждыи элемент списка lst
 #
 #
 # f = open("xyz.txt", "r")
 # d = f.read()
-# st = list(map(int, d.split("\t")))
+# st = list(map(int, d.split("\t"))) # map привел к int, split- из строки в список
 # print(st)
 # print(type(st[0]))
 # f.close()
 
 
 # file = "text2.txt"
-#
+# присвоили имя фаила,записали его в перем-ю, открыли и методом write записали содержимое
 # f = open(file, "w")
 # f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;")
 # f.close()
@@ -3227,6 +3240,8 @@
 # print(read_line)
 #
 #
+
+
 # f = open(file, "w")
 # f.writelines(read_line)
 # f.close()
@@ -3239,11 +3254,10 @@
 # f.close()
 #
 # f = open(file, "r")
-# s = f.readlines()
+# s = f.readlines() в s - список на три эл-та
 # f.close()
 # print(s)
-#
-# pos = int(input("pos = "))
+# pos = int(input("какую позицию надо удалить, pos = "))
 # if 0 <= pos < len(s):
 #     del s[pos]
 # else:
@@ -3287,11 +3301,12 @@
 
 
 # def longest_words(file):
-#     with open(file, "r") as text:  # , encoding="utf-8"
+#     with open(file, "r", encoding="utf-8") as text:  # , encoding="utf-8"
 #         w = text.read().split()
 #         print(w)
 #         max_length = len(max(w, key=len))
 #         res = [word for word in w if len(word) == max_length]
+#         # word- придуманная переменная  в генераторе списка
 #         print(max_length)
 #         if len(res) == 1:
 #             return res[0]
@@ -3300,33 +3315,37 @@
 #
 # print(longest_words('test.txt'))
 
+
+
+
+# WIDTH РАБОТАЕТ С НЕСКОЛЬКИКМИ ФИАЛАМИ
 # one = "one.txt"
 # two = "two.txt"
-# three = "three.txt"
 #
-# # text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\n
-# Строка №8\nСтрока №9\nСтрока №10\n"
-# #
-# # with open(one, 'w') as f:
-# #     f.write(text)
+# text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n"
+#
+# with open(one, 'w') as f:
+#     f.write(text)
 #
 # with open(one, "r") as fr, open(two, "w") as fw:
 #     for line in fr:
 #         line = line.replace("Строка", "Линия -")
+#        # replace МЕТОД  поиск и замена
 #         fw.write(line)
 
 
+# задача
 # one = "one.txt"
 # two = "two.txt"
 # three = "three.txt"
-
+#
 # with open(one, "r") as f1:
 #     a = f1.readlines()
-# print(a)
+# # print(a)
 #
 # with open(two, "r") as f2:
 #     b = f2.readlines()
-# print(b)
+# # print(b)
 #
 # c = a + b
 # print(c)
@@ -3334,7 +3353,11 @@
 # with open(three, "w") as f3:
 #     f3.writelines(c)
 
-
+# другои способ задачи
+# one = "one.txt"
+# two = "two.txt"
+# three = "three.txt"
+#
 # with open(one, "r") as f1, open(two, "r") as f2, open(three, "w") as f3:
 #     a = f1.readlines()
 #     b = f2.readlines()
@@ -3348,8 +3371,11 @@
 #     f3.writelines(c)
 
 
+#Задание
+
+
 # file = "text2.txt"
-#
+
 # f = open(file, "w")
 # f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
 # f.close()
@@ -3371,6 +3397,10 @@
 # f.writelines(read_line)
 # f.close()
 
+
+
+# 06.04.2024 наверно
+
 # file = "text2.txt"
 #
 # f = open(file)
@@ -3378,7 +3408,7 @@
 # for i in f:
 #     line += 1
 #     word = 0  # 5
-#     flag = 0  # 1
+#     flag = 0  # 0
 #     for j in i:
 #         if j != " " and flag == 0:
 #             word += 1
@@ -3390,6 +3420,8 @@
 #
 # print(line, "строки в документе")
 # f.close()
+
+
 
 # Модуль OS и OS.PATH
 
@@ -5736,11 +5768,17 @@
 # for g in figs:
 #     g.info()
 
+# МОДИФИКАТОРЫ ДОСТУПА:
+# PUBLIC - SELF.NAME
+# PROTECTED - SELF._NAME
+#PRIVATE - SELF.__NAME
 
-
+# родительскии (базовыи, основнои, суперкласс)
+#   дочернии (наследник, подкласс)
 
 
 #         11 05 2024
+
 # Декорирование классов
 # def decorator(cls):
 #     class Wrapper(cls):
@@ -5930,6 +5968,11 @@
 #
 # for g in shape:
 #     print(g.get_perimeter())
+
+
+
+# 12.05.2024
+
 
 # from geometry import rect, sq, trian
 
@@ -7211,3 +7254,34 @@
 # <div style="text-align: center>
 #   <input />
 # </div>
+
+
+# django - admin startproject todos
+#
+#
+# python manage.py startapp todo
+
+# IntegrityError at /signup/
+# UNIQUE constraint failed: auth_user.username
+# уникальность ограничение ошибка: на поле auth_user.username
+# надо обрботать наше исключение
+
+
+# <a href="{% url 'currentbeacon' %}"
+# эта конструкция пути переход либо в теге а либо в теле <form action="{% url 'currentbeacon' %}">
+
+# on_delete
+# бывают такие
+# models.CASCADE -если польль б удален то удалятся все его задания
+# models.PROTECT -запрещает удалять польля когда у него есть задачи
+# models.SET_NULL -задачи останутся в базе даже при удалении польля,
+# но значение в поле задачи изменится на NULL
+# models.SET_DEFAULT -задачи останутся в базе даже при удалении польля, но значение в поле задачи
+# изменится на значение коорое мы установи по умолчанию
+# # models.SET_DEFA
+
+
+
+
+
+

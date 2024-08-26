@@ -2,12 +2,13 @@
 {% block content %}
 
 <h1>Блог создателя</h1>
+<h2 class="count">Постов: {{ new_maiking.count }}</h2>
 {% for new_make in new_maiking %}
     <div class="element">
-        <h2 class="top">{{ new_make.title }}</h2>
+        <h2 class="top"><a href="{% url 'detail' new_make.id %}">{{ new_make.title }}</a></h2>
         <div class="blog_text">
-            <h5>{{ new_make.date }}</h5>
-            <p>{{ new_make.description|truncatechars:360 }}</p>
+            <h5>{{ new_make.date|date:'d.m.Y' }}</h5>
+            <p>{{ new_make.description|truncatechars:360|striptags }}</p>
         </div>
     </div>
 {% endfor %}

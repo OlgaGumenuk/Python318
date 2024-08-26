@@ -5,8 +5,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'new_about/favicon.ico' %}">
 </head>
 <body>
+<div class="menu">
+    <div class="wrap">
+        <div class="logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'new_about/logo.png' %}" alt="">
+            </a>
+        </div>
+        <ul>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'new_maiking' %}">Блог создателя</a></li>
+            <li><a href="{% static 'new_about/resume.pdf' %}" target="_blank">Резюме</a></li>
+        </ul>
+    </div>
+</div>
     <div class="content">
         <div class="wrap">
             {% block content %}
